@@ -344,9 +344,6 @@ class OfferPriceByOfferIdsResponseDTO implements ModelInterface, ArrayAccess, \J
         if ((mb_strlen($offer_id) < 1)) {
             throw new \InvalidArgumentException('invalid length for $offer_id when calling OfferPriceByOfferIdsResponseDTO., must be bigger than or equal to 1.');
         }
-        if ((!preg_match("/^[\\da-zA-ZА-Яа-я\\.,\/\\\\\\(\\)\\[\\]\\-=_]*$/", $offer_id))) {
-            throw new \InvalidArgumentException("invalid value for \$offer_id when calling OfferPriceByOfferIdsResponseDTO., must conform to the pattern /^[\\da-zA-ZА-Яа-я\\.,\/\\\\\\(\\)\\[\\]\\-=_]*$/.");
-        }
 
         $this->container['offer_id'] = $offer_id;
 
