@@ -34,7 +34,7 @@ use PHPUnit\Framework\TestCase;
  * OfferMappingEntryDTOTest Class Doc Comment
  *
  * @category    Class
- * @description Список товаров.  В теле запроса можно передать от одного до 500 товаров.  Обязательный параметр.
+ * @description Список товаров.
  * @package     YandexMarketApi
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

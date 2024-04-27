@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **return_item_id** | **int** | Идентификатор товара в возврате. | [optional]
-**count** | **int** | Количество товаров. | [optional]
+**count** | **int** | Количество единиц товара. | [optional]
 **comment** | **string** | Комментарий. | [optional]
 **reason_type** | [**\YandexMarketApi\Model\ReturnDecisionReasonType**](ReturnDecisionReasonType.md) |  | [optional]
 **subreason_type** | [**\YandexMarketApi\Model\ReturnDecisionSubreasonType**](ReturnDecisionSubreasonType.md) |  | [optional]

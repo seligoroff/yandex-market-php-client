@@ -35,7 +35,7 @@ use \YandexMarketApi\ObjectSerializer;
  * OfferParamDTO Class Doc Comment
  *
  * @category Class
- * @description Характеристика товара.
+ * @description Параметры товара.  {% note tip \&quot;\&quot; %}  Используйте [POST businesses/{businessId}/offer-cards/update](../../reference/content/updateOfferContent.md) для передачи характеристик товара, которые специфичны для его категории. Так переданные характеристики с большей вероятностью попадут на карточку.  {% endnote %}
  * @package  YandexMarketApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -316,7 +316,7 @@ class OfferParamDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets name
      *
-     * @param string $name Название.
+     * @param string $name Название.  Должно совпадать с названием характеристики на Маркете. Узнать его можно из Excel-шаблона категории или через запрос [POST category/{categoryId}/parameters](../../reference/content/getCategoryContentParameters.md).
      *
      * @return self
      */

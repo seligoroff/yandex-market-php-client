@@ -34,7 +34,7 @@ use PHPUnit\Framework\TestCase;
  * OrderParcelStatusTypeTest Class Doc Comment
  *
  * @category    Class
- * @description Статус заказа в партнерской службе доставки.
+ * @description {% note alert %}  Поле устарело и не рекомендуется к использованию.  {% endnote %}  Статус заказа в партнерской службе доставки.  * &#x60;NEW&#x60; — новый.  * &#x60;CREATED&#x60; — создан в службе доставки.  * &#x60;READY_TO_SHIP&#x60; — посылка готова к передаче в службу доставки.  * &#x60;ERROR&#x60; — ошибка создания заказа.  * &#x60;UNKNOWN&#x60; — неизвестный статус.
  * @package     YandexMarketApi
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

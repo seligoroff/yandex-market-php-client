@@ -72,12 +72,36 @@ class BusinessOfferMappingsApiTest extends TestCase
     }
 
     /**
+     * Test case for addOffersToArchive
+     *
+     * Добавление товаров в архив.
+     *
+     */
+    public function testAddOffersToArchive()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for deleteOffers
      *
      * Удаление товаров из каталога.
      *
      */
     public function testDeleteOffers()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for deleteOffersFromArchive
+     *
+     * Восстановление товаров из архива.
+     *
+     */
+    public function testDeleteOffersFromArchive()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

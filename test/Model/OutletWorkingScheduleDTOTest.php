@@ -34,7 +34,7 @@ use PHPUnit\Framework\TestCase;
  * OutletWorkingScheduleDTOTest Class Doc Comment
  *
  * @category    Class
- * @description Список режимов работы точки продаж. Обязательный параметр.
+ * @description Список режимов работы точки продаж.
  * @package     YandexMarketApi
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

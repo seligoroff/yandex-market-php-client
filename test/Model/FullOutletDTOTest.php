@@ -170,15 +170,6 @@ class FullOutletDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "emails"
-     */
-    public function testPropertyEmails()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "storage_period"
      */
     public function testPropertyStoragePeriod()

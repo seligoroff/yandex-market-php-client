@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **id** | **int** | Идентификатор характеристики. |
 **name** | **string** | Название характеристики. | [optional]
 **type** | [**\YandexMarketApi\Model\ParameterType**](ParameterType.md) |  |
+**unit** | [**\YandexMarketApi\Model\CategoryParameterUnitDTO**](CategoryParameterUnitDTO.md) |  | [optional]
 **description** | **string** | Описание характеристики. | [optional]
 **recommendation_types** | [**\YandexMarketApi\Model\OfferCardRecommendationType[]**](OfferCardRecommendationType.md) | Перечень возможных рекомендаций по заполнению карточки, к которым относится данная характеристика. | [optional]
 **required** | **bool** | Обязательность характеристики. |

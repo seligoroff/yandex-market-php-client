@@ -68,7 +68,6 @@ class OutletDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'phones' => 'string[]',
         'working_schedule' => '\YandexMarketApi\Model\OutletWorkingScheduleDTO',
         'delivery_rules' => '\YandexMarketApi\Model\OutletDeliveryRuleDTO[]',
-        'emails' => 'string[]',
         'storage_period' => 'int'
     ];
 
@@ -90,7 +89,6 @@ class OutletDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'phones' => null,
         'working_schedule' => null,
         'delivery_rules' => null,
-        'emails' => null,
         'storage_period' => 'int64'
     ];
 
@@ -110,7 +108,6 @@ class OutletDTO implements ModelInterface, ArrayAccess, \JsonSerializable
 		'phones' => false,
 		'working_schedule' => false,
 		'delivery_rules' => false,
-		'emails' => false,
 		'storage_period' => false
     ];
 
@@ -210,7 +207,6 @@ class OutletDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'phones' => 'phones',
         'working_schedule' => 'workingSchedule',
         'delivery_rules' => 'deliveryRules',
-        'emails' => 'emails',
         'storage_period' => 'storagePeriod'
     ];
 
@@ -230,7 +226,6 @@ class OutletDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'phones' => 'setPhones',
         'working_schedule' => 'setWorkingSchedule',
         'delivery_rules' => 'setDeliveryRules',
-        'emails' => 'setEmails',
         'storage_period' => 'setStoragePeriod'
     ];
 
@@ -250,7 +245,6 @@ class OutletDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'phones' => 'getPhones',
         'working_schedule' => 'getWorkingSchedule',
         'delivery_rules' => 'getDeliveryRules',
-        'emails' => 'getEmails',
         'storage_period' => 'getStoragePeriod'
     ];
 
@@ -321,7 +315,6 @@ class OutletDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('phones', $data ?? [], null);
         $this->setIfExists('working_schedule', $data ?? [], null);
         $this->setIfExists('delivery_rules', $data ?? [], null);
-        $this->setIfExists('emails', $data ?? [], null);
         $this->setIfExists('storage_period', $data ?? [], null);
     }
 
@@ -371,10 +364,6 @@ class OutletDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['working_schedule'] === null) {
             $invalidProperties[] = "'working_schedule' can't be null";
         }
-        if (!is_null($this->container['emails']) && (count($this->container['emails']) > 1)) {
-            $invalidProperties[] = "invalid value for 'emails', number of items must be less than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -403,7 +392,7 @@ class OutletDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets name
      *
-     * @param string $name Название точки продаж. Обязательный параметр.
+     * @param string $name Название точки продаж.
      *
      * @return self
      */
@@ -592,7 +581,7 @@ class OutletDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets phones
      *
-     * @param string[] $phones Номера телефонов точки продаж. Передавайте в формате: `+7 (999) 999-99-99`. Обязательный параметр.
+     * @param string[] $phones Номера телефонов точки продаж. Передавайте в формате: `+7 (999) 999-99-99`.
      *
      * @return self
      */
@@ -661,37 +650,6 @@ class OutletDTO implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable delivery_rules cannot be null');
         }
         $this->container['delivery_rules'] = $delivery_rules;
-
-        return $this;
-    }
-
-    /**
-     * Gets emails
-     *
-     * @return string[]|null
-     */
-    public function getEmails()
-    {
-        return $this->container['emails'];
-    }
-
-    /**
-     * Sets emails
-     *
-     * @param string[]|null $emails Адрес электронной почты точки продаж. Может содержать только один параметр `email`.
-     *
-     * @return self
-     */
-    public function setEmails($emails)
-    {
-        if (is_null($emails)) {
-            throw new \InvalidArgumentException('non-nullable emails cannot be null');
-        }
-
-        if ((count($emails) > 1)) {
-            throw new \InvalidArgumentException('invalid value for $emails when calling OutletDTO., number of items must be less than or equal to 1.');
-        }
-        $this->container['emails'] = $emails;
 
         return $this;
     }

@@ -34,7 +34,7 @@ use PHPUnit\Framework\TestCase;
  * CampaignSettingsScheduleSourceTypeTest Class Doc Comment
  *
  * @category    Class
- * @description Источник информации о расписании работы службы доставки. Возможные значения: * &#x60;WEB&#x60; — информация получена из настроек личного кабинета магазина на Яндекс Маркете. * &#x60;YML&#x60; — информация получена из прайс-листа магазина.
+ * @description Источник информации о расписании работы службы доставки. Возможные значения: * &#x60;WEB&#x60; — информация получена из настроек кабинета продавца на Маркете. * &#x60;YML&#x60; — информация получена из прайс-листа магазина.
  * @package     YandexMarketApi
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

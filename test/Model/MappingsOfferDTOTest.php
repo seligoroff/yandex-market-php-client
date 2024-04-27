@@ -152,15 +152,6 @@ class MappingsOfferDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "price"
-     */
-    public function testPropertyPrice()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "barcodes"
      */
     public function testPropertyBarcodes()
@@ -353,6 +344,15 @@ class MappingsOfferDTOTest extends TestCase
      * Test attribute "certificate"
      */
     public function testPropertyCertificate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "price"
+     */
+    public function testPropertyPrice()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

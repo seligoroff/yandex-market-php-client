@@ -66,7 +66,6 @@ class MappingsOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'description' => 'string',
         'id' => 'string',
         'feed_id' => 'int',
-        'price' => 'float',
         'barcodes' => 'string[]',
         'urls' => 'string[]',
         'pictures' => 'string[]',
@@ -88,7 +87,8 @@ class MappingsOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'shelf_life' => '\YandexMarketApi\Model\TimePeriodDTO',
         'life_time' => '\YandexMarketApi\Model\TimePeriodDTO',
         'guarantee_period' => '\YandexMarketApi\Model\TimePeriodDTO',
-        'certificate' => 'string'
+        'certificate' => 'string',
+        'price' => 'float'
     ];
 
     /**
@@ -107,7 +107,6 @@ class MappingsOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'description' => null,
         'id' => null,
         'feed_id' => 'int64',
-        'price' => null,
         'barcodes' => null,
         'urls' => null,
         'pictures' => null,
@@ -129,7 +128,8 @@ class MappingsOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'shelf_life' => null,
         'life_time' => null,
         'guarantee_period' => null,
-        'certificate' => null
+        'certificate' => null,
+        'price' => null
     ];
 
     /**
@@ -146,7 +146,6 @@ class MappingsOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
 		'description' => false,
 		'id' => false,
 		'feed_id' => false,
-		'price' => false,
 		'barcodes' => false,
 		'urls' => false,
 		'pictures' => false,
@@ -168,7 +167,8 @@ class MappingsOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
 		'shelf_life' => false,
 		'life_time' => false,
 		'guarantee_period' => false,
-		'certificate' => false
+		'certificate' => false,
+		'price' => false
     ];
 
     /**
@@ -265,7 +265,6 @@ class MappingsOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'description' => 'description',
         'id' => 'id',
         'feed_id' => 'feedId',
-        'price' => 'price',
         'barcodes' => 'barcodes',
         'urls' => 'urls',
         'pictures' => 'pictures',
@@ -287,7 +286,8 @@ class MappingsOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'shelf_life' => 'shelfLife',
         'life_time' => 'lifeTime',
         'guarantee_period' => 'guaranteePeriod',
-        'certificate' => 'certificate'
+        'certificate' => 'certificate',
+        'price' => 'price'
     ];
 
     /**
@@ -304,7 +304,6 @@ class MappingsOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'description' => 'setDescription',
         'id' => 'setId',
         'feed_id' => 'setFeedId',
-        'price' => 'setPrice',
         'barcodes' => 'setBarcodes',
         'urls' => 'setUrls',
         'pictures' => 'setPictures',
@@ -326,7 +325,8 @@ class MappingsOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'shelf_life' => 'setShelfLife',
         'life_time' => 'setLifeTime',
         'guarantee_period' => 'setGuaranteePeriod',
-        'certificate' => 'setCertificate'
+        'certificate' => 'setCertificate',
+        'price' => 'setPrice'
     ];
 
     /**
@@ -343,7 +343,6 @@ class MappingsOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'description' => 'getDescription',
         'id' => 'getId',
         'feed_id' => 'getFeedId',
-        'price' => 'getPrice',
         'barcodes' => 'getBarcodes',
         'urls' => 'getUrls',
         'pictures' => 'getPictures',
@@ -365,7 +364,8 @@ class MappingsOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'shelf_life' => 'getShelfLife',
         'life_time' => 'getLifeTime',
         'guarantee_period' => 'getGuaranteePeriod',
-        'certificate' => 'getCertificate'
+        'certificate' => 'getCertificate',
+        'price' => 'getPrice'
     ];
 
     /**
@@ -433,7 +433,6 @@ class MappingsOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('description', $data ?? [], null);
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('feed_id', $data ?? [], null);
-        $this->setIfExists('price', $data ?? [], null);
         $this->setIfExists('barcodes', $data ?? [], null);
         $this->setIfExists('urls', $data ?? [], null);
         $this->setIfExists('pictures', $data ?? [], null);
@@ -456,6 +455,7 @@ class MappingsOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('life_time', $data ?? [], null);
         $this->setIfExists('guarantee_period', $data ?? [], null);
         $this->setIfExists('certificate', $data ?? [], null);
+        $this->setIfExists('price', $data ?? [], null);
     }
 
     /**
@@ -485,8 +485,8 @@ class MappingsOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['name']) && (mb_strlen($this->container['name']) > 150)) {
-            $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 150.";
+        if (!is_null($this->container['name']) && (mb_strlen($this->container['name']) > 256)) {
+            $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 256.";
         }
 
         if (!is_null($this->container['shop_sku']) && (mb_strlen($this->container['shop_sku']) > 80)) {
@@ -497,8 +497,8 @@ class MappingsOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'shop_sku', the character length must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['shop_sku']) && !preg_match("/^[\\da-zA-ZА-Яа-я\\.,\/\\\\\\(\\)\\[\\]\\-=_]*$/", $this->container['shop_sku'])) {
-            $invalidProperties[] = "invalid value for 'shop_sku', must be conform to the pattern /^[\\da-zA-ZА-Яа-я\\.,\/\\\\\\(\\)\\[\\]\\-=_]*$/.";
+        if (!is_null($this->container['shop_sku']) && !preg_match("/^[0-9a-zа-яА-ЯA-ZёËëЁ.,\\\\\/()\\[\\]\\-=_]{1,80}$/", $this->container['shop_sku'])) {
+            $invalidProperties[] = "invalid value for 'shop_sku', must be conform to the pattern /^[0-9a-zа-яА-ЯA-ZёËëЁ.,\\\\\/()\\[\\]\\-=_]{1,80}$/.";
         }
 
         if (!is_null($this->container['description']) && (mb_strlen($this->container['description']) > 6000)) {
@@ -513,8 +513,8 @@ class MappingsOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'id', the character length must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['id']) && !preg_match("/^[\\da-zA-ZА-Яа-я\\.,\/\\\\\\(\\)\\[\\]\\-=_]*$/", $this->container['id'])) {
-            $invalidProperties[] = "invalid value for 'id', must be conform to the pattern /^[\\da-zA-ZА-Яа-я\\.,\/\\\\\\(\\)\\[\\]\\-=_]*$/.";
+        if (!is_null($this->container['id']) && !preg_match("/^[0-9a-zа-яА-ЯA-ZёËëЁ.,\\\\\/()\\[\\]\\-=_]{1,80}$/", $this->container['id'])) {
+            $invalidProperties[] = "invalid value for 'id', must be conform to the pattern /^[0-9a-zа-яА-ЯA-ZёËëЁ.,\\\\\/()\\[\\]\\-=_]{1,80}$/.";
         }
 
         return $invalidProperties;
@@ -545,7 +545,7 @@ class MappingsOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets name
      *
-     * @param string|null $name Составляйте название по схеме: тип + бренд или производитель + модель + особенности, если есть (например, цвет, размер или вес) и количество в упаковке.  Не включайте в название условия продажи (например, «скидка», «бесплатная доставка» и т. д.), эмоциональные характеристики («хит», «супер» и т. д.). Не пишите слова большими буквами — кроме устоявшихся названий брендов и моделей.  Оптимальная длина — 50–60 символов, максимальная — 150.  [Рекомендации и правила](https://yandex.ru/support/marketplace/assortment/fields/title.html)
+     * @param string|null $name Составляйте название по схеме: тип + бренд или производитель + модель + особенности, если есть (например, цвет, размер или вес) и количество в упаковке.  Не включайте в название условия продажи (например, «скидка», «бесплатная доставка» и т. д.), эмоциональные характеристики («хит», «супер» и т. д.). Не пишите слова большими буквами — кроме устоявшихся названий брендов и моделей.  Оптимальная длина — 50–60 символов, максимальная — 256.  [Рекомендации и правила](https://yandex.ru/support/marketplace/assortment/fields/title.html)
      *
      * @return self
      */
@@ -554,8 +554,8 @@ class MappingsOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($name)) {
             throw new \InvalidArgumentException('non-nullable name cannot be null');
         }
-        if ((mb_strlen($name) > 150)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling MappingsOfferDTO., must be smaller than or equal to 150.');
+        if ((mb_strlen($name) > 256)) {
+            throw new \InvalidArgumentException('invalid length for $name when calling MappingsOfferDTO., must be smaller than or equal to 256.');
         }
 
         $this->container['name'] = $name;
@@ -576,7 +576,7 @@ class MappingsOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shop_sku
      *
-     * @param string|null $shop_sku **Ваш SKU**  Идентификатор товара в магазине. Разрешены английские и русские буквы (кроме ё), цифры и символы `. , / \\ ( ) [ ] - = _`  Максимальная длина — 80 знаков.  [Что такое SKU и как его назначать](https://yandex.ru/support/marketplace/assortment/add/index.html#fields).
+     * @param string|null $shop_sku Ваш SKU — идентификатор товара в вашей системе.  Разрешена любая последовательность длиной до 80 знаков. В нее могут входить английские и русские буквы, цифры и символы `. , / \\ ( ) [ ] - = _`  Правила использования SKU:  * У каждого товара SKU должен быть свой.  * SKU товара нельзя менять — можно только удалить товар и добавить заново с новым SKU.  * Уже заданный SKU нельзя освободить и использовать заново для другого товара. Каждый товар должен получать новый идентификатор, до того никогда не использовавшийся в вашем каталоге.  [Что такое SKU и как его назначать](https://yandex.ru/support/marketplace/assortment/add/index.html#fields)
      *
      * @return self
      */
@@ -590,6 +590,9 @@ class MappingsOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ((mb_strlen($shop_sku) < 1)) {
             throw new \InvalidArgumentException('invalid length for $shop_sku when calling MappingsOfferDTO., must be bigger than or equal to 1.');
+        }
+        if ((!preg_match("/^[0-9a-zа-яА-ЯA-ZёËëЁ.,\\\\\/()\\[\\]\\-=_]{1,80}$/", $shop_sku))) {
+            throw new \InvalidArgumentException("invalid value for \$shop_sku when calling MappingsOfferDTO., must conform to the pattern /^[0-9a-zа-яА-ЯA-ZёËëЁ.,\\\\\/()\\[\\]\\-=_]{1,80}$/.");
         }
 
         $this->container['shop_sku'] = $shop_sku;
@@ -610,7 +613,7 @@ class MappingsOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets category
      *
-     * @param string|null $category Категория, к которой магазин относит свой товар. Она помогает точнее определить для товара категорию в каталоге Маркета.  Указывайте конкретные категории — например, набор ножей лучше отнести к категории **Столовые приборы**, а не просто **Посуда**.  Выбирайте категории, которые описывают товар, а не абстрактный признак — например, **Духи**, а не **Подарки**.
+     * @param string|null $category Категория товара в вашем магазине. Значение будет использовано для определения категории товара на Маркете в случае, если вы не передали категорию в параметре  marketCategoryId.  Указывайте конкретные категории — например, набор ножей лучше отнести к категории **Столовые приборы**, а не просто **Посуда**.  Выбирайте категории, которые описывают товар, а не абстрактный признак — например, **Духи**, а не **Подарки**.  Значение будет использовано для определения категории товара на Маркете в случае, если вы не передали категорию в параметре `marketCategoryId`.
      *
      * @return self
      */
@@ -722,7 +725,7 @@ class MappingsOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param string|null $id **Ваш SKU**  Идентификатор товара в магазине. Разрешены английские и русские буквы (кроме ё), цифры и символы `. , / \\ ( ) [ ] - = _`  Максимальная длина — 80 знаков.  [Что такое SKU и как его назначать](https://yandex.ru/support/marketplace/assortment/add/index.html#fields).
+     * @param string|null $id Ваш SKU — идентификатор товара в вашей системе.  Разрешена любая последовательность длиной до 80 знаков. В нее могут входить английские и русские буквы, цифры и символы `. , / \\ ( ) [ ] - = _`  Правила использования SKU:  * У каждого товара SKU должен быть свой.  * SKU товара нельзя менять — можно только удалить товар и добавить заново с новым SKU.  * Уже заданный SKU нельзя освободить и использовать заново для другого товара. Каждый товар должен получать новый идентификатор, до того никогда не использовавшийся в вашем каталоге.  [Что такое SKU и как его назначать](https://yandex.ru/support/marketplace/assortment/add/index.html#fields)
      *
      * @return self
      */
@@ -737,8 +740,8 @@ class MappingsOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         if ((mb_strlen($id) < 1)) {
             throw new \InvalidArgumentException('invalid length for $id when calling MappingsOfferDTO., must be bigger than or equal to 1.');
         }
-        if ((!preg_match("/^[\\da-zA-ZА-Яа-я\\.,\/\\\\\\(\\)\\[\\]\\-=_]*$/", $id))) {
-            throw new \InvalidArgumentException("invalid value for \$id when calling MappingsOfferDTO., must conform to the pattern /^[\\da-zA-ZА-Яа-я\\.,\/\\\\\\(\\)\\[\\]\\-=_]*$/.");
+        if ((!preg_match("/^[0-9a-zа-яА-ЯA-ZёËëЁ.,\\\\\/()\\[\\]\\-=_]{1,80}$/", $id))) {
+            throw new \InvalidArgumentException("invalid value for \$id when calling MappingsOfferDTO., must conform to the pattern /^[0-9a-zа-яА-ЯA-ZёËëЁ.,\\\\\/()\\[\\]\\-=_]{1,80}$/.");
         }
 
         $this->container['id'] = $id;
@@ -774,33 +777,6 @@ class MappingsOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets price
-     *
-     * @return float|null
-     */
-    public function getPrice()
-    {
-        return $this->container['price'];
-    }
-
-    /**
-     * Sets price
-     *
-     * @param float|null $price Цена товара в рублях.
-     *
-     * @return self
-     */
-    public function setPrice($price)
-    {
-        if (is_null($price)) {
-            throw new \InvalidArgumentException('non-nullable price cannot be null');
-        }
-        $this->container['price'] = $price;
-
-        return $this;
-    }
-
-    /**
      * Gets barcodes
      *
      * @return string[]|null
@@ -813,7 +789,7 @@ class MappingsOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets barcodes
      *
-     * @param string[]|null $barcodes Указывайте в виде последовательности цифр. Подойдут коды EAN-13, EAN-8, UPC-A, UPC-E или Code 128.  Для книг указывайте ISBN.  Для товаров [определенных категорий и торговых марок](https://yastatic.net/s3/doc-binary/src/support/market/ru/yandex-market-list-for-gtin.xlsx) штрихкод должен быть действительным кодом GTIN. Обратите внимание: внутренние штрихкоды, начинающиеся на 2 или 02, и коды формата Code 128 не являются GTIN.  [Что такое GTIN](*gtin)  [*gtin]:**Что такое GTIN**\\nGTIN — это уникальный номер, присвоенный товару в единой международной базе [GS1](https://ru.wikipedia.org/wiki/GS1). Из этого номера получается штрихкод формата EAN, UPC или ISBN.\\n\\n**Как убедиться, что товар есть в базе**\\nПроверить код можно на [странице проверки](https://gepir.gs1.org/index.php/search-by-gtin) на сайте ассоциации GS1. Если товар не находится, запросите код GTIN у вашего поставщика.\\n\\n**Как получить GTIN для своих товаров**\\nЧтобы получить коды GTIN, производителю нужно вступить в ассоциацию GS1 и зарегистрировать товары.
+     * @param string[]|null $barcodes Указывайте в виде последовательности цифр. Подойдут коды EAN-13, EAN-8, UPC-A, UPC-E или Code 128.  Для книг указывайте ISBN.  Для товаров [определенных категорий и торговых марок](https://yastatic.net/s3/doc-binary/src/support/market/ru/yandex-market-list-for-gtin.xlsx) штрихкод должен быть действительным кодом GTIN. Обратите внимание: внутренние штрихкоды, начинающиеся на 2 или 02, и коды формата Code 128 не являются GTIN.  [Что такое GTIN](*gtin)
      *
      * @return self
      */
@@ -1380,7 +1356,7 @@ class MappingsOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets certificate
      *
-     * @param string|null $certificate Номер документа на товар.  Перед указанием номера документ нужно загрузить в личном кабинете магазина. [Инструкция](https://yandex.ru/support/marketplace/assortment/restrictions/certificates.html)
+     * @param string|null $certificate Номер документа на товар.  Перед указанием номера документ нужно загрузить в кабинете продавца на Маркете. [Инструкция](https://yandex.ru/support/marketplace/assortment/restrictions/certificates.html)
      *
      * @return self
      */
@@ -1390,6 +1366,33 @@ class MappingsOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable certificate cannot be null');
         }
         $this->container['certificate'] = $certificate;
+
+        return $this;
+    }
+
+    /**
+     * Gets price
+     *
+     * @return float|null
+     */
+    public function getPrice()
+    {
+        return $this->container['price'];
+    }
+
+    /**
+     * Sets price
+     *
+     * @param float|null $price Цена товара в рублях.
+     *
+     * @return self
+     */
+    public function setPrice($price)
+    {
+        if (is_null($price)) {
+            throw new \InvalidArgumentException('non-nullable price cannot be null');
+        }
+        $this->container['price'] = $price;
 
         return $this;
     }

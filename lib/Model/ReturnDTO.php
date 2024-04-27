@@ -454,7 +454,7 @@ class ReturnDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets update_date
      *
-     * @param \DateTime|null $update_date Дата обновления заказа.
+     * @param \DateTime|null $update_date Дата обновления возврата.
      *
      * @return self
      */

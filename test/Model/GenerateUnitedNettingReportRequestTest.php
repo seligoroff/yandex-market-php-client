@@ -107,6 +107,24 @@ class GenerateUnitedNettingReportRequestTest extends TestCase
     }
 
     /**
+     * Test attribute "date_from"
+     */
+    public function testPropertyDateFrom()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "date_to"
+     */
+    public function testPropertyDateTo()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "bank_order_id"
      */
     public function testPropertyBankOrderId()

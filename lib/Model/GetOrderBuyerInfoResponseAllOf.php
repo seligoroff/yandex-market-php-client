@@ -57,7 +57,7 @@ class GetOrderBuyerInfoResponseAllOf implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\YandexMarketApi\Model\OrderBuyerDTO'
+        'result' => '\YandexMarketApi\Model\OrderBuyerInfoDTO'
     ];
 
     /**
@@ -292,7 +292,7 @@ class GetOrderBuyerInfoResponseAllOf implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets result
      *
-     * @return \YandexMarketApi\Model\OrderBuyerDTO|null
+     * @return \YandexMarketApi\Model\OrderBuyerInfoDTO|null
      */
     public function getResult()
     {
@@ -302,7 +302,7 @@ class GetOrderBuyerInfoResponseAllOf implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets result
      *
-     * @param \YandexMarketApi\Model\OrderBuyerDTO|null $result result
+     * @param \YandexMarketApi\Model\OrderBuyerInfoDTO|null $result result
      *
      * @return self
      */

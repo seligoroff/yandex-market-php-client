@@ -114,4 +114,13 @@ class OfferForRecommendationDTOTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "shows"
+     */
+    public function testPropertyShows()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }

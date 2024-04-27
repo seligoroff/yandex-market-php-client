@@ -35,7 +35,7 @@ use \YandexMarketApi\ObjectSerializer;
  * OrderDeliveryAddressDTO Class Doc Comment
  *
  * @category Class
- * @description Адрес доставки.  Указывается, если &#x60;type&#x3D;DELIVERY&#x60; или &#x60;type&#x3D;POST&#x60;.
+ * @description Адрес доставки.  Указывается, если &#x60;type&#x3D;DELIVERY&#x60;, &#x60;type&#x3D;POST&#x60; или &#x60;type&#x3D;PICKUP&#x60; (адрес пункта выдачи).
  * @package  YandexMarketApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

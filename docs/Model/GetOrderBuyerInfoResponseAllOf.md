@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**\YandexMarketApi\Model\OrderBuyerDTO**](OrderBuyerDTO.md) |  | [optional]
+**result** | [**\YandexMarketApi\Model\OrderBuyerInfoDTO**](OrderBuyerInfoDTO.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

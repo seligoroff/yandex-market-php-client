@@ -162,14 +162,14 @@ class ShipmentsApi
      *
      * @param  int $campaign_id Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
      * @param  int $shipment_id Идентификатор отгрузки. (required)
-     * @param  \YandexMarketApi\Model\ConfirmShipmentRequest $confirm_shipment_request confirm_shipment_request (required)
+     * @param  \YandexMarketApi\Model\ConfirmShipmentRequest $confirm_shipment_request confirm_shipment_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['confirmShipment'] to see the possible values for this operation
      *
      * @throws \YandexMarketApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \YandexMarketApi\Model\EmptyApiResponse|\YandexMarketApi\Model\ApiClientDataErrorResponse|\YandexMarketApi\Model\ApiUnauthorizedErrorResponse|\YandexMarketApi\Model\ApiForbiddenErrorResponse|\YandexMarketApi\Model\ApiNotFoundErrorResponse|\YandexMarketApi\Model\ApiLimitErrorResponse|\YandexMarketApi\Model\ApiServerErrorResponse
      */
-    public function confirmShipment($campaign_id, $shipment_id, $confirm_shipment_request, string $contentType = self::contentTypes['confirmShipment'][0])
+    public function confirmShipment($campaign_id, $shipment_id, $confirm_shipment_request = null, string $contentType = self::contentTypes['confirmShipment'][0])
     {
         list($response) = $this->confirmShipmentWithHttpInfo($campaign_id, $shipment_id, $confirm_shipment_request, $contentType);
         return $response;
@@ -182,14 +182,14 @@ class ShipmentsApi
      *
      * @param  int $campaign_id Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
      * @param  int $shipment_id Идентификатор отгрузки. (required)
-     * @param  \YandexMarketApi\Model\ConfirmShipmentRequest $confirm_shipment_request (required)
+     * @param  \YandexMarketApi\Model\ConfirmShipmentRequest $confirm_shipment_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['confirmShipment'] to see the possible values for this operation
      *
      * @throws \YandexMarketApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \YandexMarketApi\Model\EmptyApiResponse|\YandexMarketApi\Model\ApiClientDataErrorResponse|\YandexMarketApi\Model\ApiUnauthorizedErrorResponse|\YandexMarketApi\Model\ApiForbiddenErrorResponse|\YandexMarketApi\Model\ApiNotFoundErrorResponse|\YandexMarketApi\Model\ApiLimitErrorResponse|\YandexMarketApi\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function confirmShipmentWithHttpInfo($campaign_id, $shipment_id, $confirm_shipment_request, string $contentType = self::contentTypes['confirmShipment'][0])
+    public function confirmShipmentWithHttpInfo($campaign_id, $shipment_id, $confirm_shipment_request = null, string $contentType = self::contentTypes['confirmShipment'][0])
     {
         $request = $this->confirmShipmentRequest($campaign_id, $shipment_id, $confirm_shipment_request, $contentType);
 
@@ -422,13 +422,13 @@ class ShipmentsApi
      *
      * @param  int $campaign_id Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
      * @param  int $shipment_id Идентификатор отгрузки. (required)
-     * @param  \YandexMarketApi\Model\ConfirmShipmentRequest $confirm_shipment_request (required)
+     * @param  \YandexMarketApi\Model\ConfirmShipmentRequest $confirm_shipment_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['confirmShipment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function confirmShipmentAsync($campaign_id, $shipment_id, $confirm_shipment_request, string $contentType = self::contentTypes['confirmShipment'][0])
+    public function confirmShipmentAsync($campaign_id, $shipment_id, $confirm_shipment_request = null, string $contentType = self::contentTypes['confirmShipment'][0])
     {
         return $this->confirmShipmentAsyncWithHttpInfo($campaign_id, $shipment_id, $confirm_shipment_request, $contentType)
             ->then(
@@ -445,13 +445,13 @@ class ShipmentsApi
      *
      * @param  int $campaign_id Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
      * @param  int $shipment_id Идентификатор отгрузки. (required)
-     * @param  \YandexMarketApi\Model\ConfirmShipmentRequest $confirm_shipment_request (required)
+     * @param  \YandexMarketApi\Model\ConfirmShipmentRequest $confirm_shipment_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['confirmShipment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function confirmShipmentAsyncWithHttpInfo($campaign_id, $shipment_id, $confirm_shipment_request, string $contentType = self::contentTypes['confirmShipment'][0])
+    public function confirmShipmentAsyncWithHttpInfo($campaign_id, $shipment_id, $confirm_shipment_request = null, string $contentType = self::contentTypes['confirmShipment'][0])
     {
         $returnType = '\YandexMarketApi\Model\EmptyApiResponse';
         $request = $this->confirmShipmentRequest($campaign_id, $shipment_id, $confirm_shipment_request, $contentType);
@@ -497,13 +497,13 @@ class ShipmentsApi
      *
      * @param  int $campaign_id Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
      * @param  int $shipment_id Идентификатор отгрузки. (required)
-     * @param  \YandexMarketApi\Model\ConfirmShipmentRequest $confirm_shipment_request (required)
+     * @param  \YandexMarketApi\Model\ConfirmShipmentRequest $confirm_shipment_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['confirmShipment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function confirmShipmentRequest($campaign_id, $shipment_id, $confirm_shipment_request, string $contentType = self::contentTypes['confirmShipment'][0])
+    public function confirmShipmentRequest($campaign_id, $shipment_id, $confirm_shipment_request = null, string $contentType = self::contentTypes['confirmShipment'][0])
     {
 
         // verify the required parameter 'campaign_id' is set
@@ -520,12 +520,6 @@ class ShipmentsApi
             );
         }
 
-        // verify the required parameter 'confirm_shipment_request' is set
-        if ($confirm_shipment_request === null || (is_array($confirm_shipment_request) && count($confirm_shipment_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $confirm_shipment_request when calling confirmShipment'
-            );
-        }
 
 
         $resourcePath = '/campaigns/{campaignId}/first-mile/shipments/{shipmentId}/confirm';

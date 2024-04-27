@@ -356,6 +356,7 @@ class OrderShipmentDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * Gets status
      *
      * @return \YandexMarketApi\Model\OrderParcelStatusType|null
+     * @deprecated
      */
     public function getStatus()
     {
@@ -368,6 +369,7 @@ class OrderShipmentDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * @param \YandexMarketApi\Model\OrderParcelStatusType|null $status status
      *
      * @return self
+     * @deprecated
      */
     public function setStatus($status)
     {
@@ -419,7 +421,7 @@ class OrderShipmentDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shipment_time
      *
-     * @param string|null $shipment_time Время, когда нужно отгрузить заказы службе доставки.  Формат времени: 24-часовой, `ЧЧ:ММ`.  Если заказ сделан организацией, параметр не возвращается до согласования даты доставки.
+     * @param string|null $shipment_time **Только для модели Экспресс**  Время, к которому магазин должен упаковать заказ и перевести его в статус `READY_TO_SHIP`. После смены статуса за заказом приедет курьер.  Формат времени: 24-часовой, `ЧЧ:ММ`.  Если заказ сделан организацией, параметр не возвращается до согласования даты доставки.
      *
      * @return self
      */
@@ -446,7 +448,7 @@ class OrderShipmentDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tracks
      *
-     * @param \YandexMarketApi\Model\OrderTrackDTO[]|null $tracks Информация для отслеживания перемещений посылки.
+     * @param \YandexMarketApi\Model\OrderTrackDTO[]|null $tracks **Только для модели DBS**  Информация для отслеживания перемещений посылки.
      *
      * @return self
      */

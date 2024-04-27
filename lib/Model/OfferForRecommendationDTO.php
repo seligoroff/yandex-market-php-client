@@ -61,7 +61,8 @@ class OfferForRecommendationDTO implements ModelInterface, ArrayAccess, \JsonSer
         'offer_id' => 'string',
         'price' => '\YandexMarketApi\Model\BasePriceDTO',
         'cofinance_price' => '\YandexMarketApi\Model\GetPriceDTO',
-        'competitiveness' => '\YandexMarketApi\Model\PriceCompetitivenessType'
+        'competitiveness' => '\YandexMarketApi\Model\PriceCompetitivenessType',
+        'shows' => 'int'
     ];
 
     /**
@@ -75,7 +76,8 @@ class OfferForRecommendationDTO implements ModelInterface, ArrayAccess, \JsonSer
         'offer_id' => null,
         'price' => null,
         'cofinance_price' => null,
-        'competitiveness' => null
+        'competitiveness' => null,
+        'shows' => 'int64'
     ];
 
     /**
@@ -87,7 +89,8 @@ class OfferForRecommendationDTO implements ModelInterface, ArrayAccess, \JsonSer
         'offer_id' => false,
 		'price' => false,
 		'cofinance_price' => false,
-		'competitiveness' => false
+		'competitiveness' => false,
+		'shows' => false
     ];
 
     /**
@@ -179,7 +182,8 @@ class OfferForRecommendationDTO implements ModelInterface, ArrayAccess, \JsonSer
         'offer_id' => 'offerId',
         'price' => 'price',
         'cofinance_price' => 'cofinancePrice',
-        'competitiveness' => 'competitiveness'
+        'competitiveness' => 'competitiveness',
+        'shows' => 'shows'
     ];
 
     /**
@@ -191,7 +195,8 @@ class OfferForRecommendationDTO implements ModelInterface, ArrayAccess, \JsonSer
         'offer_id' => 'setOfferId',
         'price' => 'setPrice',
         'cofinance_price' => 'setCofinancePrice',
-        'competitiveness' => 'setCompetitiveness'
+        'competitiveness' => 'setCompetitiveness',
+        'shows' => 'setShows'
     ];
 
     /**
@@ -203,7 +208,8 @@ class OfferForRecommendationDTO implements ModelInterface, ArrayAccess, \JsonSer
         'offer_id' => 'getOfferId',
         'price' => 'getPrice',
         'cofinance_price' => 'getCofinancePrice',
-        'competitiveness' => 'getCompetitiveness'
+        'competitiveness' => 'getCompetitiveness',
+        'shows' => 'getShows'
     ];
 
     /**
@@ -267,6 +273,7 @@ class OfferForRecommendationDTO implements ModelInterface, ArrayAccess, \JsonSer
         $this->setIfExists('price', $data ?? [], null);
         $this->setIfExists('cofinance_price', $data ?? [], null);
         $this->setIfExists('competitiveness', $data ?? [], null);
+        $this->setIfExists('shows', $data ?? [], null);
     }
 
     /**
@@ -304,8 +311,8 @@ class OfferForRecommendationDTO implements ModelInterface, ArrayAccess, \JsonSer
             $invalidProperties[] = "invalid value for 'offer_id', the character length must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['offer_id']) && !preg_match("/^[\\da-zA-ZА-Яа-я\\.,\/\\\\\\(\\)\\[\\]\\-=_]*$/", $this->container['offer_id'])) {
-            $invalidProperties[] = "invalid value for 'offer_id', must be conform to the pattern /^[\\da-zA-ZА-Яа-я\\.,\/\\\\\\(\\)\\[\\]\\-=_]*$/.";
+        if (!is_null($this->container['offer_id']) && !preg_match("/^[0-9a-zа-яА-ЯA-ZёËëЁ.,\\\\\/()\\[\\]\\-=_]{1,80}$/", $this->container['offer_id'])) {
+            $invalidProperties[] = "invalid value for 'offer_id', must be conform to the pattern /^[0-9a-zа-яА-ЯA-ZёËëЁ.,\\\\\/()\\[\\]\\-=_]{1,80}$/.";
         }
 
         return $invalidProperties;
@@ -336,7 +343,7 @@ class OfferForRecommendationDTO implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets offer_id
      *
-     * @param string|null $offer_id **Ваш SKU**  Идентификатор товара в магазине. Разрешены английские и русские буквы (кроме ё), цифры и символы `. , / \\ ( ) [ ] - = _`  Максимальная длина — 80 знаков.  [Что такое SKU и как его назначать](https://yandex.ru/support/marketplace/assortment/add/index.html#fields).
+     * @param string|null $offer_id Ваш SKU — идентификатор товара в вашей системе.  Разрешена любая последовательность длиной до 80 знаков. В нее могут входить английские и русские буквы, цифры и символы `. , / \\ ( ) [ ] - = _`  Правила использования SKU:  * У каждого товара SKU должен быть свой.  * SKU товара нельзя менять — можно только удалить товар и добавить заново с новым SKU.  * Уже заданный SKU нельзя освободить и использовать заново для другого товара. Каждый товар должен получать новый идентификатор, до того никогда не использовавшийся в вашем каталоге.  [Что такое SKU и как его назначать](https://yandex.ru/support/marketplace/assortment/add/index.html#fields)
      *
      * @return self
      */
@@ -350,6 +357,9 @@ class OfferForRecommendationDTO implements ModelInterface, ArrayAccess, \JsonSer
         }
         if ((mb_strlen($offer_id) < 1)) {
             throw new \InvalidArgumentException('invalid length for $offer_id when calling OfferForRecommendationDTO., must be bigger than or equal to 1.');
+        }
+        if ((!preg_match("/^[0-9a-zа-яА-ЯA-ZёËëЁ.,\\\\\/()\\[\\]\\-=_]{1,80}$/", $offer_id))) {
+            throw new \InvalidArgumentException("invalid value for \$offer_id when calling OfferForRecommendationDTO., must conform to the pattern /^[0-9a-zа-яА-ЯA-ZёËëЁ.,\\\\\/()\\[\\]\\-=_]{1,80}$/.");
         }
 
         $this->container['offer_id'] = $offer_id;
@@ -434,6 +444,33 @@ class OfferForRecommendationDTO implements ModelInterface, ArrayAccess, \JsonSer
             throw new \InvalidArgumentException('non-nullable competitiveness cannot be null');
         }
         $this->container['competitiveness'] = $competitiveness;
+
+        return $this;
+    }
+
+    /**
+     * Gets shows
+     *
+     * @return int|null
+     */
+    public function getShows()
+    {
+        return $this->container['shows'];
+    }
+
+    /**
+     * Sets shows
+     *
+     * @param int|null $shows Количество показов карточки товара за последние 7 дней.
+     *
+     * @return self
+     */
+    public function setShows($shows)
+    {
+        if (is_null($shows)) {
+            throw new \InvalidArgumentException('non-nullable shows cannot be null');
+        }
+        $this->container['shows'] = $shows;
 
         return $this;
     }

@@ -58,8 +58,7 @@ class ConfirmShipmentRequest implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'external_shipment_id' => 'string',
-        'order_ids' => 'int[]'
+        'external_shipment_id' => 'string'
     ];
 
     /**
@@ -70,8 +69,7 @@ class ConfirmShipmentRequest implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'external_shipment_id' => null,
-        'order_ids' => 'int64'
+        'external_shipment_id' => null
     ];
 
     /**
@@ -80,8 +78,7 @@ class ConfirmShipmentRequest implements ModelInterface, ArrayAccess, \JsonSerial
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'external_shipment_id' => false,
-		'order_ids' => false
+        'external_shipment_id' => false
     ];
 
     /**
@@ -170,8 +167,7 @@ class ConfirmShipmentRequest implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
-        'external_shipment_id' => 'externalShipmentId',
-        'order_ids' => 'orderIds'
+        'external_shipment_id' => 'externalShipmentId'
     ];
 
     /**
@@ -180,8 +176,7 @@ class ConfirmShipmentRequest implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'external_shipment_id' => 'setExternalShipmentId',
-        'order_ids' => 'setOrderIds'
+        'external_shipment_id' => 'setExternalShipmentId'
     ];
 
     /**
@@ -190,8 +185,7 @@ class ConfirmShipmentRequest implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
-        'external_shipment_id' => 'getExternalShipmentId',
-        'order_ids' => 'getOrderIds'
+        'external_shipment_id' => 'getExternalShipmentId'
     ];
 
     /**
@@ -252,7 +246,6 @@ class ConfirmShipmentRequest implements ModelInterface, ArrayAccess, \JsonSerial
     public function __construct(array $data = null)
     {
         $this->setIfExists('external_shipment_id', $data ?? [], null);
-        $this->setIfExists('order_ids', $data ?? [], null);
     }
 
     /**
@@ -281,13 +274,6 @@ class ConfirmShipmentRequest implements ModelInterface, ArrayAccess, \JsonSerial
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        if ($this->container['order_ids'] === null) {
-            $invalidProperties[] = "'order_ids' can't be null";
-        }
-        if ((count($this->container['order_ids']) < 1)) {
-            $invalidProperties[] = "invalid value for 'order_ids', number of items must be greater than or equal to 1.";
-        }
 
         return $invalidProperties;
     }
@@ -327,38 +313,6 @@ class ConfirmShipmentRequest implements ModelInterface, ArrayAccess, \JsonSerial
             throw new \InvalidArgumentException('non-nullable external_shipment_id cannot be null');
         }
         $this->container['external_shipment_id'] = $external_shipment_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets order_ids
-     *
-     * @return int[]
-     */
-    public function getOrderIds()
-    {
-        return $this->container['order_ids'];
-    }
-
-    /**
-     * Sets order_ids
-     *
-     * @param int[] $order_ids Список идентификаторов заказов в отгрузке.
-     *
-     * @return self
-     */
-    public function setOrderIds($order_ids)
-    {
-        if (is_null($order_ids)) {
-            throw new \InvalidArgumentException('non-nullable order_ids cannot be null');
-        }
-
-
-        if ((count($order_ids) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $order_ids when calling ConfirmShipmentRequest., number of items must be greater than or equal to 1.');
-        }
-        $this->container['order_ids'] = $order_ids;
 
         return $this;
     }

@@ -116,6 +116,24 @@ class ShipmentInfoDTOTest extends TestCase
     }
 
     /**
+     * Test attribute "warehouse"
+     */
+    public function testPropertyWarehouse()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "warehouse_to"
+     */
+    public function testPropertyWarehouseTo()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "external_id"
      */
     public function testPropertyExternalId()
@@ -125,27 +143,27 @@ class ShipmentInfoDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "status"
-     */
-    public function testPropertyStatus()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "status_description"
-     */
-    public function testPropertyStatusDescription()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "delivery_service"
      */
     public function testPropertyDeliveryService()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "pallets_count"
+     */
+    public function testPropertyPalletsCount()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "order_ids"
+     */
+    public function testPropertyOrderIds()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -173,6 +191,33 @@ class ShipmentInfoDTOTest extends TestCase
      * Test attribute "fact_count"
      */
     public function testPropertyFactCount()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "status"
+     */
+    public function testPropertyStatus()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "status_description"
+     */
+    public function testPropertyStatusDescription()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "status_update_time"
+     */
+    public function testPropertyStatusUpdateTime()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

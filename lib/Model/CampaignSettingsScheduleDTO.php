@@ -365,7 +365,7 @@ class CampaignSettingsScheduleDTO implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets custom_holidays
      *
-     * @param string[]|null $custom_holidays Список дней, в которые служба доставки не работает. Дни магазин указал в личном кабинете на Маркете.
+     * @param string[]|null $custom_holidays Список дней, в которые служба доставки не работает. Дни магазин указал в кабинете продавца на Маркете.
      *
      * @return self
      */
@@ -392,7 +392,7 @@ class CampaignSettingsScheduleDTO implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets custom_working_days
      *
-     * @param string[]|null $custom_working_days Список выходных и праздничных дней, в которые служба доставки работает. Дни магазин указал в личном кабинете на Маркете.
+     * @param string[]|null $custom_working_days Список выходных и праздничных дней, в которые служба доставки работает. Дни магазин указал в кабинете продавца на Маркете.
      *
      * @return self
      */
@@ -446,7 +446,7 @@ class CampaignSettingsScheduleDTO implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets total_holidays
      *
-     * @param string[]|null $total_holidays Итоговый список нерабочих дней службы доставки. Список рассчитывается с учетом выходных, нерабочих дней и государственных праздников. Информацию по ним магазин указывает в личном кабинете на Маркете.
+     * @param string[]|null $total_holidays Итоговый список нерабочих дней службы доставки. Список рассчитывается с учетом выходных, нерабочих дней и государственных праздников. Информацию по ним магазин указывает в кабинете продавца на Маркете.
      *
      * @return self
      */

@@ -59,6 +59,7 @@ class GetWarehouseStocksRequest implements ModelInterface, ArrayAccess, \JsonSer
       */
     protected static $openAPITypes = [
         'with_turnover' => 'bool',
+        'archived' => 'bool',
         'offer_ids' => 'string[]'
     ];
 
@@ -71,6 +72,7 @@ class GetWarehouseStocksRequest implements ModelInterface, ArrayAccess, \JsonSer
       */
     protected static $openAPIFormats = [
         'with_turnover' => null,
+        'archived' => null,
         'offer_ids' => null
     ];
 
@@ -81,6 +83,7 @@ class GetWarehouseStocksRequest implements ModelInterface, ArrayAccess, \JsonSer
       */
     protected static array $openAPINullables = [
         'with_turnover' => false,
+		'archived' => false,
 		'offer_ids' => false
     ];
 
@@ -171,6 +174,7 @@ class GetWarehouseStocksRequest implements ModelInterface, ArrayAccess, \JsonSer
      */
     protected static $attributeMap = [
         'with_turnover' => 'withTurnover',
+        'archived' => 'archived',
         'offer_ids' => 'offerIds'
     ];
 
@@ -181,6 +185,7 @@ class GetWarehouseStocksRequest implements ModelInterface, ArrayAccess, \JsonSer
      */
     protected static $setters = [
         'with_turnover' => 'setWithTurnover',
+        'archived' => 'setArchived',
         'offer_ids' => 'setOfferIds'
     ];
 
@@ -191,6 +196,7 @@ class GetWarehouseStocksRequest implements ModelInterface, ArrayAccess, \JsonSer
      */
     protected static $getters = [
         'with_turnover' => 'getWithTurnover',
+        'archived' => 'getArchived',
         'offer_ids' => 'getOfferIds'
     ];
 
@@ -252,6 +258,7 @@ class GetWarehouseStocksRequest implements ModelInterface, ArrayAccess, \JsonSer
     public function __construct(array $data = null)
     {
         $this->setIfExists('with_turnover', $data ?? [], false);
+        $this->setIfExists('archived', $data ?? [], null);
         $this->setIfExists('offer_ids', $data ?? [], null);
     }
 
@@ -329,6 +336,33 @@ class GetWarehouseStocksRequest implements ModelInterface, ArrayAccess, \JsonSer
     }
 
     /**
+     * Gets archived
+     *
+     * @return bool|null
+     */
+    public function getArchived()
+    {
+        return $this->container['archived'];
+    }
+
+    /**
+     * Sets archived
+     *
+     * @param bool|null $archived Фильтр по нахождению в архиве.  Передайте `true`, чтобы получить информацию об остатках товаров, которые находятся в архиве. Если фильтр не заполнен или передано `false`, в ответе возвращается информация о товарах, которые не находятся в архиве.
+     *
+     * @return self
+     */
+    public function setArchived($archived)
+    {
+        if (is_null($archived)) {
+            throw new \InvalidArgumentException('non-nullable archived cannot be null');
+        }
+        $this->container['archived'] = $archived;
+
+        return $this;
+    }
+
+    /**
      * Gets offer_ids
      *
      * @return string[]|null
@@ -341,7 +375,7 @@ class GetWarehouseStocksRequest implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets offer_ids
      *
-     * @param string[]|null $offer_ids Фильтр по вашим SKU товаров.
+     * @param string[]|null $offer_ids Фильтр по вашим SKU товаров.  Возвращается информация об остатках всех переданных SKU, включая товары в архиве.  {% note warning \"Такой список возвращается только целиком\" %}  Если вы запрашиваете информацию по конкретным SKU, не заполняйте:  * `page_token`; * `limit`; * `archived`.  {% endnote %}   
      *
      * @return self
      */

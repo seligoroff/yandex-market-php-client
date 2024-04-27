@@ -35,7 +35,7 @@ use \YandexMarketApi\ObjectSerializer;
  * UpdateStocksRequest Class Doc Comment
  *
  * @category Class
- * @description Запрос на изменение информации по стокам.
+ * @description Запрос на изменение информации по остаткам товаров.
  * @package  YandexMarketApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -58,7 +58,7 @@ class UpdateStocksRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'skus' => '\YandexMarketApi\Model\StockDTO[]'
+        'skus' => '\YandexMarketApi\Model\UpdateStockDTO[]'
     ];
 
     /**
@@ -304,7 +304,7 @@ class UpdateStocksRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets skus
      *
-     * @return \YandexMarketApi\Model\StockDTO[]
+     * @return \YandexMarketApi\Model\UpdateStockDTO[]
      */
     public function getSkus()
     {
@@ -314,7 +314,7 @@ class UpdateStocksRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets skus
      *
-     * @param \YandexMarketApi\Model\StockDTO[] $skus Данные об остатках товаров.
+     * @param \YandexMarketApi\Model\UpdateStockDTO[] $skus Данные об остатках товаров.
      *
      * @return self
      */

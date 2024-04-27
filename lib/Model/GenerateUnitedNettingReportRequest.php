@@ -61,6 +61,8 @@ class GenerateUnitedNettingReportRequest implements ModelInterface, ArrayAccess,
         'business_id' => 'int',
         'date_time_from' => '\DateTime',
         'date_time_to' => '\DateTime',
+        'date_from' => '\DateTime',
+        'date_to' => '\DateTime',
         'bank_order_id' => 'int',
         'bank_order_date_time' => '\DateTime',
         'placement_programs' => '\YandexMarketApi\Model\PlacementType[]',
@@ -79,6 +81,8 @@ class GenerateUnitedNettingReportRequest implements ModelInterface, ArrayAccess,
         'business_id' => 'int64',
         'date_time_from' => 'date-time',
         'date_time_to' => 'date-time',
+        'date_from' => 'date',
+        'date_to' => 'date',
         'bank_order_id' => 'int64',
         'bank_order_date_time' => 'date-time',
         'placement_programs' => null,
@@ -95,6 +99,8 @@ class GenerateUnitedNettingReportRequest implements ModelInterface, ArrayAccess,
         'business_id' => false,
 		'date_time_from' => false,
 		'date_time_to' => false,
+		'date_from' => false,
+		'date_to' => false,
 		'bank_order_id' => false,
 		'bank_order_date_time' => false,
 		'placement_programs' => false,
@@ -191,6 +197,8 @@ class GenerateUnitedNettingReportRequest implements ModelInterface, ArrayAccess,
         'business_id' => 'businessId',
         'date_time_from' => 'dateTimeFrom',
         'date_time_to' => 'dateTimeTo',
+        'date_from' => 'dateFrom',
+        'date_to' => 'dateTo',
         'bank_order_id' => 'bankOrderId',
         'bank_order_date_time' => 'bankOrderDateTime',
         'placement_programs' => 'placementPrograms',
@@ -207,6 +215,8 @@ class GenerateUnitedNettingReportRequest implements ModelInterface, ArrayAccess,
         'business_id' => 'setBusinessId',
         'date_time_from' => 'setDateTimeFrom',
         'date_time_to' => 'setDateTimeTo',
+        'date_from' => 'setDateFrom',
+        'date_to' => 'setDateTo',
         'bank_order_id' => 'setBankOrderId',
         'bank_order_date_time' => 'setBankOrderDateTime',
         'placement_programs' => 'setPlacementPrograms',
@@ -223,6 +233,8 @@ class GenerateUnitedNettingReportRequest implements ModelInterface, ArrayAccess,
         'business_id' => 'getBusinessId',
         'date_time_from' => 'getDateTimeFrom',
         'date_time_to' => 'getDateTimeTo',
+        'date_from' => 'getDateFrom',
+        'date_to' => 'getDateTo',
         'bank_order_id' => 'getBankOrderId',
         'bank_order_date_time' => 'getBankOrderDateTime',
         'placement_programs' => 'getPlacementPrograms',
@@ -290,6 +302,8 @@ class GenerateUnitedNettingReportRequest implements ModelInterface, ArrayAccess,
         $this->setIfExists('business_id', $data ?? [], null);
         $this->setIfExists('date_time_from', $data ?? [], null);
         $this->setIfExists('date_time_to', $data ?? [], null);
+        $this->setIfExists('date_from', $data ?? [], null);
+        $this->setIfExists('date_to', $data ?? [], null);
         $this->setIfExists('bank_order_id', $data ?? [], null);
         $this->setIfExists('bank_order_date_time', $data ?? [], null);
         $this->setIfExists('placement_programs', $data ?? [], null);
@@ -382,7 +396,7 @@ class GenerateUnitedNettingReportRequest implements ModelInterface, ArrayAccess,
     /**
      * Sets date_time_from
      *
-     * @param \DateTime|null $date_time_from Начало периода, включительно.
+     * @param \DateTime|null $date_time_from {% note alert \"Это поле устарело\" %}  Не используйте его — это может привести к ошибкам.  {% endnote %}  Начало периода, включительно.
      *
      * @return self
      */
@@ -409,7 +423,7 @@ class GenerateUnitedNettingReportRequest implements ModelInterface, ArrayAccess,
     /**
      * Sets date_time_to
      *
-     * @param \DateTime|null $date_time_to Конец периода, включительно. Максимальный период — 1 год.
+     * @param \DateTime|null $date_time_to {% note alert \"Это поле устарело\" %}  Не используйте его — это может привести к ошибкам.  {% endnote %}  Конец периода, включительно. Максимальный период — 1 год.
      *
      * @return self
      */
@@ -419,6 +433,60 @@ class GenerateUnitedNettingReportRequest implements ModelInterface, ArrayAccess,
             throw new \InvalidArgumentException('non-nullable date_time_to cannot be null');
         }
         $this->container['date_time_to'] = $date_time_to;
+
+        return $this;
+    }
+
+    /**
+     * Gets date_from
+     *
+     * @return \DateTime|null
+     */
+    public function getDateFrom()
+    {
+        return $this->container['date_from'];
+    }
+
+    /**
+     * Sets date_from
+     *
+     * @param \DateTime|null $date_from Начало периода, включительно.
+     *
+     * @return self
+     */
+    public function setDateFrom($date_from)
+    {
+        if (is_null($date_from)) {
+            throw new \InvalidArgumentException('non-nullable date_from cannot be null');
+        }
+        $this->container['date_from'] = $date_from;
+
+        return $this;
+    }
+
+    /**
+     * Gets date_to
+     *
+     * @return \DateTime|null
+     */
+    public function getDateTo()
+    {
+        return $this->container['date_to'];
+    }
+
+    /**
+     * Sets date_to
+     *
+     * @param \DateTime|null $date_to Конец периода, включительно. Максимальный период — 1 год.
+     *
+     * @return self
+     */
+    public function setDateTo($date_to)
+    {
+        if (is_null($date_to)) {
+            throw new \InvalidArgumentException('non-nullable date_to cannot be null');
+        }
+        $this->container['date_to'] = $date_to;
 
         return $this;
     }

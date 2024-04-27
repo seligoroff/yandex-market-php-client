@@ -74,7 +74,7 @@ class DbsApiTest extends TestCase
     /**
      * Test case for acceptOrderCancellation
      *
-     * Отмена заказа покупателем.
+     * Отмена заказа покупателем (DBS).
      *
      */
     public function testAcceptOrderCancellation()
@@ -90,6 +90,30 @@ class DbsApiTest extends TestCase
      *
      */
     public function testAddHiddenOffers()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for addOffersToArchive
+     *
+     * Добавление товаров в архив.
+     *
+     */
+    public function testAddOffersToArchive()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for calculateTariffs
+     *
+     * Калькулятор стоимости услуг.
+     *
+     */
+    public function testCalculateTariffs()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -114,6 +138,18 @@ class DbsApiTest extends TestCase
      *
      */
     public function testConfirmCampaignPrices()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for createChat
+     *
+     * Создание нового чата с покупателем.
+     *
+     */
+    public function testCreateChat()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -168,6 +204,18 @@ class DbsApiTest extends TestCase
     }
 
     /**
+     * Test case for deleteOffersFromArchive
+     *
+     * Восстановление товаров из архива.
+     *
+     */
+    public function testDeleteOffersFromArchive()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for deleteOutlet
      *
      * Удаление точки продаж.
@@ -192,6 +240,18 @@ class DbsApiTest extends TestCase
     }
 
     /**
+     * Test case for generateBoostConsolidatedReport
+     *
+     * Отчет по бусту продаж.
+     *
+     */
+    public function testGenerateBoostConsolidatedReport()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for generateGoodsRealizationReport
      *
      * Отчет по реализации.
@@ -206,7 +266,7 @@ class DbsApiTest extends TestCase
     /**
      * Test case for generateOrderLabel
      *
-     * Ярлык‑наклейка на отдельное грузовое место в заказе.
+     * Ярлык‑наклейка для коробки в заказе.
      *
      */
     public function testGenerateOrderLabel()
@@ -282,6 +342,18 @@ class DbsApiTest extends TestCase
      *
      */
     public function testGenerateUnitedNettingReport()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for generateUnitedOrdersReport
+     *
+     * Отчет по заказам.
+     *
+     */
+    public function testGenerateUnitedOrdersReport()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -444,12 +516,48 @@ class DbsApiTest extends TestCase
     }
 
     /**
+     * Test case for getCategoriesTree
+     *
+     * Дерево категорий.
+     *
+     */
+    public function testGetCategoriesTree()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for getCategoryContentParameters
      *
      * Списки характеристик товаров по категориям.
      *
      */
     public function testGetCategoryContentParameters()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getChatHistory
+     *
+     * Получение истории сообщений в чате.
+     *
+     */
+    public function testGetChatHistory()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getChats
+     *
+     * Получение доступных чатов.
+     *
+     */
+    public function testGetChats()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -662,7 +770,7 @@ class DbsApiTest extends TestCase
     /**
      * Test case for getOrderBuyerInfo
      *
-     * Информация о покупателе.
+     * Информация о покупателе — физическом лице (DBS).
      *
      */
     public function testGetOrderBuyerInfo()
@@ -686,7 +794,7 @@ class DbsApiTest extends TestCase
     /**
      * Test case for getOrdersStats
      *
-     * Отчет по заказам.
+     * Детальная информация по заказам.
      *
      */
     public function testGetOrdersStats()
@@ -816,6 +924,18 @@ class DbsApiTest extends TestCase
     }
 
     /**
+     * Test case for getStocks
+     *
+     * Информация об остатках и оборачиваемости.
+     *
+     */
+    public function testGetStocks()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for getSuggestedOfferMappings
      *
      * Предварительный просмотр карточек на Маркете, соответствующих вашим товарам.
@@ -854,7 +974,7 @@ class DbsApiTest extends TestCase
     /**
      * Test case for provideOrderItemIdentifiers
      *
-     * Передача уникальных кодов маркировки единиц товара.
+     * Передача уникальных кодов маркировки единиц товара (DBS).
      *
      */
     public function testProvideOrderItemIdentifiers()
@@ -948,6 +1068,30 @@ class DbsApiTest extends TestCase
     }
 
     /**
+     * Test case for sendFileToChat
+     *
+     * Отправка файла в чат.
+     *
+     */
+    public function testSendFileToChat()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for sendMessageToChat
+     *
+     * Отправка сообщения в чат.
+     *
+     */
+    public function testSendMessageToChat()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for setFeedParams
      *
      * Изменение параметров прайс-листа.
@@ -974,7 +1118,7 @@ class DbsApiTest extends TestCase
     /**
      * Test case for setOrderDeliveryTrackCode
      *
-     * Передача трек‑номера посылки.
+     * Передача трек‑номера посылки (DBS).
      *
      */
     public function testSetOrderDeliveryTrackCode()
@@ -986,7 +1130,7 @@ class DbsApiTest extends TestCase
     /**
      * Test case for setOrderShipmentBoxes
      *
-     * Передача количества грузовых мест в заказе.
+     * Передача количества грузовых мест в заказе (DBS).
      *
      */
     public function testSetOrderShipmentBoxes()
@@ -1070,7 +1214,7 @@ class DbsApiTest extends TestCase
     /**
      * Test case for updateOrderItems
      *
-     * Удаление товара из заказа или уменьшение числа единиц.
+     * Удаление товара из заказа или уменьшение числа единиц (DBS).
      *
      */
     public function testUpdateOrderItems()

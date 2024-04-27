@@ -307,8 +307,8 @@ class SkuBidRecommendationItemDTO implements ModelInterface, ArrayAccess, \JsonS
             $invalidProperties[] = "invalid value for 'sku', the character length must be bigger than or equal to 1.";
         }
 
-        if (!preg_match("/^[\\da-zA-ZА-Яа-я\\.,\/\\\\\\(\\)\\[\\]\\-=_]*$/", $this->container['sku'])) {
-            $invalidProperties[] = "invalid value for 'sku', must be conform to the pattern /^[\\da-zA-ZА-Яа-я\\.,\/\\\\\\(\\)\\[\\]\\-=_]*$/.";
+        if (!preg_match("/^[0-9a-zа-яА-ЯA-ZёËëЁ.,\\\\\/()\\[\\]\\-=_]{1,80}$/", $this->container['sku'])) {
+            $invalidProperties[] = "invalid value for 'sku', must be conform to the pattern /^[0-9a-zа-яА-ЯA-ZёËëЁ.,\\\\\/()\\[\\]\\-=_]{1,80}$/.";
         }
 
         if ($this->container['bid'] === null) {
@@ -350,7 +350,7 @@ class SkuBidRecommendationItemDTO implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets sku
      *
-     * @param string $sku **Ваш SKU**  Идентификатор товара в магазине. Разрешены английские и русские буквы (кроме ё), цифры и символы `. , / \\ ( ) [ ] - = _`  Максимальная длина — 80 знаков.  [Что такое SKU и как его назначать](https://yandex.ru/support/marketplace/assortment/add/index.html#fields).
+     * @param string $sku Ваш SKU — идентификатор товара в вашей системе.  Разрешена любая последовательность длиной до 80 знаков. В нее могут входить английские и русские буквы, цифры и символы `. , / \\ ( ) [ ] - = _`  Правила использования SKU:  * У каждого товара SKU должен быть свой.  * SKU товара нельзя менять — можно только удалить товар и добавить заново с новым SKU.  * Уже заданный SKU нельзя освободить и использовать заново для другого товара. Каждый товар должен получать новый идентификатор, до того никогда не использовавшийся в вашем каталоге.  [Что такое SKU и как его назначать](https://yandex.ru/support/marketplace/assortment/add/index.html#fields)
      *
      * @return self
      */
@@ -365,8 +365,8 @@ class SkuBidRecommendationItemDTO implements ModelInterface, ArrayAccess, \JsonS
         if ((mb_strlen($sku) < 1)) {
             throw new \InvalidArgumentException('invalid length for $sku when calling SkuBidRecommendationItemDTO., must be bigger than or equal to 1.');
         }
-        if ((!preg_match("/^[\\da-zA-ZА-Яа-я\\.,\/\\\\\\(\\)\\[\\]\\-=_]*$/", $sku))) {
-            throw new \InvalidArgumentException("invalid value for \$sku when calling SkuBidRecommendationItemDTO., must conform to the pattern /^[\\da-zA-ZА-Яа-я\\.,\/\\\\\\(\\)\\[\\]\\-=_]*$/.");
+        if ((!preg_match("/^[0-9a-zа-яА-ЯA-ZёËëЁ.,\\\\\/()\\[\\]\\-=_]{1,80}$/", $sku))) {
+            throw new \InvalidArgumentException("invalid value for \$sku when calling SkuBidRecommendationItemDTO., must conform to the pattern /^[0-9a-zа-яА-ЯA-ZёËëЁ.,\\\\\/()\\[\\]\\-=_]{1,80}$/.");
         }
 
         $this->container['sku'] = $sku;

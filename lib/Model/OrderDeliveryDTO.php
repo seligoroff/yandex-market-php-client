@@ -443,7 +443,7 @@ class OrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param string|null $id Идентификатор доставки, присвоенный магазином.  Указывается, только если магазин передал данный идентификатор в ответе на запрос методом `POST /cart`.
+     * @param string|null $id Идентификатор доставки, присвоенный магазином.  Указывается, только если магазин передал данный идентификатор в ответе на запрос методом [POST cart](../../pushapi/reference/cart.md).
      *
      * @return self
      */
@@ -515,6 +515,7 @@ class OrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * Gets price
      *
      * @return float|null
+     * @deprecated
      */
     public function getPrice()
     {
@@ -524,9 +525,10 @@ class OrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets price
      *
-     * @param float|null $price Стоимость доставки в валюте заказа.  Для отделения целой части от дробной используется точка.
+     * @param float|null $price {% note warning \"\" %}  Этот параметр устарел. Стоимость доставки смотрите в параметре `deliveryTotal`.  {% endnote %}  Стоимость доставки в валюте заказа.  Для отделения целой части от дробной используется точка.
      *
      * @return self
+     * @deprecated
      */
     public function setPrice($price)
     {
@@ -794,7 +796,7 @@ class OrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets outlet_code
      *
-     * @param string|null $outlet_code Идентификатор пункта самовывоза, выбранного покупателем для получения заказа.  Идентификатор указывается:  * в личном кабинете магазина при создании или редактировании точки продаж.  Параметр указывается, если `type=PICKUP`.
+     * @param string|null $outlet_code Идентификатор пункта самовывоза, присвоенный магазином.
      *
      * @return self
      */
@@ -983,7 +985,7 @@ class OrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets eac_code
      *
-     * @param string|null $eac_code Код подтверждения ЭАПП (для типа MERCHANT_TO_COURIER).
+     * @param string|null $eac_code Код подтверждения ЭАПП (для типа `MERCHANT_TO_COURIER`).
      *
      * @return self
      */

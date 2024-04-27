@@ -58,7 +58,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
       */
     protected static $openAPITypes = [
         'status' => '\YandexMarketApi\Model\ApiResponseStatusType',
-        'result' => '\YandexMarketApi\Model\OrderBuyerDTO'
+        'result' => '\YandexMarketApi\Model\OrderBuyerInfoDTO'
     ];
 
     /**
@@ -326,7 +326,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets result
      *
-     * @return \YandexMarketApi\Model\OrderBuyerDTO|null
+     * @return \YandexMarketApi\Model\OrderBuyerInfoDTO|null
      */
     public function getResult()
     {
@@ -336,7 +336,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets result
      *
-     * @param \YandexMarketApi\Model\OrderBuyerDTO|null $result result
+     * @param \YandexMarketApi\Model\OrderBuyerInfoDTO|null $result result
      *
      * @return self
      */

@@ -313,7 +313,7 @@ class CategoryContentParametersDTO implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets category_id
      *
-     * @param int $category_id Идентификатор категории на Маркете.
+     * @param int $category_id Идентификатор категории на Маркете. Чтобы узнать идентификатор категории, к которой относится товар, воспользуйтесь запросом [POST categories/tree](../../reference/categories/getCategoriesTree.md).
      *
      * @return self
      */
