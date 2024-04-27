@@ -134,6 +134,15 @@ class ShipmentDTOTest extends TestCase
     }
 
     /**
+     * Test attribute "external_id"
+     */
+    public function testPropertyExternalId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "delivery_service"
      */
     public function testPropertyDeliveryService()
@@ -152,18 +161,45 @@ class ShipmentDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "current_status"
+     * Test attribute "order_ids"
      */
-    public function testPropertyCurrentStatus()
+    public function testPropertyOrderIds()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "order_ids"
+     * Test attribute "draft_count"
      */
-    public function testPropertyOrderIds()
+    public function testPropertyDraftCount()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "planned_count"
+     */
+    public function testPropertyPlannedCount()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "fact_count"
+     */
+    public function testPropertyFactCount()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "current_status"
+     */
+    public function testPropertyCurrentStatus()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

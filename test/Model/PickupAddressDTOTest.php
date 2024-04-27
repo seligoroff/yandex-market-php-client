@@ -34,7 +34,7 @@ use PHPUnit\Framework\TestCase;
  * PickupAddressDTOTest Class Doc Comment
  *
  * @category    Class
- * @description Информация об адресе доставки.
+ * @description Адрес доставки.
  * @package     YandexMarketApi
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

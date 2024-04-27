@@ -72,6 +72,18 @@ class ReportsApiTest extends TestCase
     }
 
     /**
+     * Test case for generateBoostConsolidatedReport
+     *
+     * Отчет по бусту продаж.
+     *
+     */
+    public function testGenerateBoostConsolidatedReport()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for generateGoodsMovementReport
      *
      * Отчет по движению товаров.
@@ -96,12 +108,36 @@ class ReportsApiTest extends TestCase
     }
 
     /**
+     * Test case for generateGoodsTurnoverReport
+     *
+     * Отчет по оборачиваемости.
+     *
+     */
+    public function testGenerateGoodsTurnoverReport()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for generatePricesReport
      *
      * Отчет «Цены на рынке».
      *
      */
     public function testGeneratePricesReport()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for generateShipmentListDocumentReport
+     *
+     * Лист сборки.
+     *
+     */
+    public function testGenerateShipmentListDocumentReport()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -150,6 +186,18 @@ class ReportsApiTest extends TestCase
      *
      */
     public function testGenerateUnitedNettingReport()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for generateUnitedOrdersReport
+     *
+     * Отчет по заказам.
+     *
+     */
+    public function testGenerateUnitedOrdersReport()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

@@ -34,7 +34,7 @@ use PHPUnit\Framework\TestCase;
  * OfferParamDTOTest Class Doc Comment
  *
  * @category    Class
- * @description Характеристика товара.
+ * @description Параметры товара.  {% note tip \&quot;\&quot; %}  Используйте [POST businesses/{businessId}/offer-cards/update](../../reference/content/updateOfferContent.md) для передачи характеристик товара, которые специфичны для его категории. Так переданные характеристики с большей вероятностью попадут на карточку.  {% endnote %}
  * @package     YandexMarketApi
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

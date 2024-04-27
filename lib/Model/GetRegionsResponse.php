@@ -309,7 +309,7 @@ class GetRegionsResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets regions
      *
-     * @param \YandexMarketApi\Model\RegionDTO[]|null $regions Информация о регионах.
+     * @param \YandexMarketApi\Model\RegionDTO[]|null $regions Регион доставки.
      *
      * @return self
      */

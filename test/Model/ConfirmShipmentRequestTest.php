@@ -87,13 +87,4 @@ class ConfirmShipmentRequestTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
-
-    /**
-     * Test attribute "order_ids"
-     */
-    public function testPropertyOrderIds()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
 }

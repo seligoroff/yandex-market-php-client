@@ -89,6 +89,15 @@ class GetWarehouseStocksRequestTest extends TestCase
     }
 
     /**
+     * Test attribute "archived"
+     */
+    public function testPropertyArchived()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "offer_ids"
      */
     public function testPropertyOfferIds()

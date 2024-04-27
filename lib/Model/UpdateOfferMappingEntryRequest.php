@@ -58,7 +58,7 @@ class UpdateOfferMappingEntryRequest implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'offer_mapping_entries' => '\YandexMarketApi\Model\OfferMappingEntryDTO[]'
+        'offer_mapping_entries' => '\YandexMarketApi\Model\UpdateOfferMappingEntryDTO[]'
     ];
 
     /**
@@ -304,7 +304,7 @@ class UpdateOfferMappingEntryRequest implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets offer_mapping_entries
      *
-     * @return \YandexMarketApi\Model\OfferMappingEntryDTO[]
+     * @return \YandexMarketApi\Model\UpdateOfferMappingEntryDTO[]
      */
     public function getOfferMappingEntries()
     {
@@ -314,7 +314,7 @@ class UpdateOfferMappingEntryRequest implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets offer_mapping_entries
      *
-     * @param \YandexMarketApi\Model\OfferMappingEntryDTO[] $offer_mapping_entries Информация о товарах в каталоге.
+     * @param \YandexMarketApi\Model\UpdateOfferMappingEntryDTO[] $offer_mapping_entries Информация о товарах в каталоге.
      *
      * @return self
      */

@@ -142,15 +142,17 @@ class PricesApi
      * @param  int $campaign_id Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
      * @param  string $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается самая старая страница.  Рекомендуется передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60;, параметры &#x60;offset&#x60;, &#x60;page_number&#x60; и &#x60;page_size&#x60; игнорируются. (optional)
      * @param  int $limit Количество товаров на одной странице. (optional)
+     * @param  bool $archived Фильтр по нахождению в архиве (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPrices'] to see the possible values for this operation
      *
      * @throws \YandexMarketApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \YandexMarketApi\Model\GetPricesResponse|\YandexMarketApi\Model\ApiClientDataErrorResponse|\YandexMarketApi\Model\ApiUnauthorizedErrorResponse|\YandexMarketApi\Model\ApiForbiddenErrorResponse|\YandexMarketApi\Model\ApiNotFoundErrorResponse|\YandexMarketApi\Model\ApiLimitErrorResponse|\YandexMarketApi\Model\ApiServerErrorResponse
+     * @deprecated
      */
-    public function getPrices($campaign_id, $page_token = null, $limit = null, string $contentType = self::contentTypes['getPrices'][0])
+    public function getPrices($campaign_id, $page_token = null, $limit = null, $archived = false, string $contentType = self::contentTypes['getPrices'][0])
     {
-        list($response) = $this->getPricesWithHttpInfo($campaign_id, $page_token, $limit, $contentType);
+        list($response) = $this->getPricesWithHttpInfo($campaign_id, $page_token, $limit, $archived, $contentType);
         return $response;
     }
 
@@ -162,15 +164,17 @@ class PricesApi
      * @param  int $campaign_id Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
      * @param  string $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается самая старая страница.  Рекомендуется передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60;, параметры &#x60;offset&#x60;, &#x60;page_number&#x60; и &#x60;page_size&#x60; игнорируются. (optional)
      * @param  int $limit Количество товаров на одной странице. (optional)
+     * @param  bool $archived Фильтр по нахождению в архиве (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPrices'] to see the possible values for this operation
      *
      * @throws \YandexMarketApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \YandexMarketApi\Model\GetPricesResponse|\YandexMarketApi\Model\ApiClientDataErrorResponse|\YandexMarketApi\Model\ApiUnauthorizedErrorResponse|\YandexMarketApi\Model\ApiForbiddenErrorResponse|\YandexMarketApi\Model\ApiNotFoundErrorResponse|\YandexMarketApi\Model\ApiLimitErrorResponse|\YandexMarketApi\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
-    public function getPricesWithHttpInfo($campaign_id, $page_token = null, $limit = null, string $contentType = self::contentTypes['getPrices'][0])
+    public function getPricesWithHttpInfo($campaign_id, $page_token = null, $limit = null, $archived = false, string $contentType = self::contentTypes['getPrices'][0])
     {
-        $request = $this->getPricesRequest($campaign_id, $page_token, $limit, $contentType);
+        $request = $this->getPricesRequest($campaign_id, $page_token, $limit, $archived, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -402,14 +406,16 @@ class PricesApi
      * @param  int $campaign_id Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
      * @param  string $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается самая старая страница.  Рекомендуется передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60;, параметры &#x60;offset&#x60;, &#x60;page_number&#x60; и &#x60;page_size&#x60; игнорируются. (optional)
      * @param  int $limit Количество товаров на одной странице. (optional)
+     * @param  bool $archived Фильтр по нахождению в архиве (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPrices'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
-    public function getPricesAsync($campaign_id, $page_token = null, $limit = null, string $contentType = self::contentTypes['getPrices'][0])
+    public function getPricesAsync($campaign_id, $page_token = null, $limit = null, $archived = false, string $contentType = self::contentTypes['getPrices'][0])
     {
-        return $this->getPricesAsyncWithHttpInfo($campaign_id, $page_token, $limit, $contentType)
+        return $this->getPricesAsyncWithHttpInfo($campaign_id, $page_token, $limit, $archived, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -425,15 +431,17 @@ class PricesApi
      * @param  int $campaign_id Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
      * @param  string $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается самая старая страница.  Рекомендуется передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60;, параметры &#x60;offset&#x60;, &#x60;page_number&#x60; и &#x60;page_size&#x60; игнорируются. (optional)
      * @param  int $limit Количество товаров на одной странице. (optional)
+     * @param  bool $archived Фильтр по нахождению в архиве (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPrices'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
-    public function getPricesAsyncWithHttpInfo($campaign_id, $page_token = null, $limit = null, string $contentType = self::contentTypes['getPrices'][0])
+    public function getPricesAsyncWithHttpInfo($campaign_id, $page_token = null, $limit = null, $archived = false, string $contentType = self::contentTypes['getPrices'][0])
     {
         $returnType = '\YandexMarketApi\Model\GetPricesResponse';
-        $request = $this->getPricesRequest($campaign_id, $page_token, $limit, $contentType);
+        $request = $this->getPricesRequest($campaign_id, $page_token, $limit, $archived, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -477,12 +485,14 @@ class PricesApi
      * @param  int $campaign_id Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
      * @param  string $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается самая старая страница.  Рекомендуется передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60;, параметры &#x60;offset&#x60;, &#x60;page_number&#x60; и &#x60;page_size&#x60; игнорируются. (optional)
      * @param  int $limit Количество товаров на одной странице. (optional)
+     * @param  bool $archived Фильтр по нахождению в архиве (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPrices'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
-    public function getPricesRequest($campaign_id, $page_token = null, $limit = null, string $contentType = self::contentTypes['getPrices'][0])
+    public function getPricesRequest($campaign_id, $page_token = null, $limit = null, $archived = false, string $contentType = self::contentTypes['getPrices'][0])
     {
 
         // verify the required parameter 'campaign_id' is set
@@ -491,6 +501,7 @@ class PricesApi
                 'Missing the required parameter $campaign_id when calling getPrices'
             );
         }
+
 
 
 
@@ -516,6 +527,15 @@ class PricesApi
             $limit,
             'limit', // param base name
             'integer', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $archived,
+            'archived', // param base name
+            'boolean', // openApiType
             '', // style
             false, // explode
             false // required

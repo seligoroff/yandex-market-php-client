@@ -98,6 +98,15 @@ class BaseOfferDTOTest extends TestCase
     }
 
     /**
+     * Test attribute "market_category_id"
+     */
+    public function testPropertyMarketCategoryId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "category"
      */
     public function testPropertyCategory()
@@ -119,6 +128,15 @@ class BaseOfferDTOTest extends TestCase
      * Test attribute "videos"
      */
     public function testPropertyVideos()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "manuals"
+     */
+    public function testPropertyManuals()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

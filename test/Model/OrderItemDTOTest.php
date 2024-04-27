@@ -89,27 +89,9 @@ class OrderItemDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "feed_id"
-     */
-    public function testPropertyFeedId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "offer_id"
      */
     public function testPropertyOfferId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "feed_category_id"
-     */
-    public function testPropertyFeedCategoryId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

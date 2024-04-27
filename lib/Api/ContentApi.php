@@ -133,7 +133,7 @@ class ContentApi
      *
      * Списки характеристик товаров по категориям
      *
-     * @param  int $category_id Идентификатор категории на Маркете.  Чтобы узнать идентификатор категории, к которой относится интересующий вас товар, воспользуйтесь запросом [POST /businesses/{businessId}/offer-cards](../../reference/content/getOfferCardsContentStatus.md). (required)
+     * @param  int $category_id Идентификатор категории на Маркете.  Чтобы узнать идентификатор категории, к которой относится интересующий вас товар, воспользуйтесь запросом [POST categories/tree](../../reference/categories/getCategoriesTree.md). (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCategoryContentParameters'] to see the possible values for this operation
      *
      * @throws \YandexMarketApi\ApiException on non-2xx response
@@ -151,7 +151,7 @@ class ContentApi
      *
      * Списки характеристик товаров по категориям
      *
-     * @param  int $category_id Идентификатор категории на Маркете.  Чтобы узнать идентификатор категории, к которой относится интересующий вас товар, воспользуйтесь запросом [POST /businesses/{businessId}/offer-cards](../../reference/content/getOfferCardsContentStatus.md). (required)
+     * @param  int $category_id Идентификатор категории на Маркете.  Чтобы узнать идентификатор категории, к которой относится интересующий вас товар, воспользуйтесь запросом [POST categories/tree](../../reference/categories/getCategoriesTree.md). (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCategoryContentParameters'] to see the possible values for this operation
      *
      * @throws \YandexMarketApi\ApiException on non-2xx response
@@ -389,7 +389,7 @@ class ContentApi
      *
      * Списки характеристик товаров по категориям
      *
-     * @param  int $category_id Идентификатор категории на Маркете.  Чтобы узнать идентификатор категории, к которой относится интересующий вас товар, воспользуйтесь запросом [POST /businesses/{businessId}/offer-cards](../../reference/content/getOfferCardsContentStatus.md). (required)
+     * @param  int $category_id Идентификатор категории на Маркете.  Чтобы узнать идентификатор категории, к которой относится интересующий вас товар, воспользуйтесь запросом [POST categories/tree](../../reference/categories/getCategoriesTree.md). (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCategoryContentParameters'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -410,7 +410,7 @@ class ContentApi
      *
      * Списки характеристик товаров по категориям
      *
-     * @param  int $category_id Идентификатор категории на Маркете.  Чтобы узнать идентификатор категории, к которой относится интересующий вас товар, воспользуйтесь запросом [POST /businesses/{businessId}/offer-cards](../../reference/content/getOfferCardsContentStatus.md). (required)
+     * @param  int $category_id Идентификатор категории на Маркете.  Чтобы узнать идентификатор категории, к которой относится интересующий вас товар, воспользуйтесь запросом [POST categories/tree](../../reference/categories/getCategoriesTree.md). (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCategoryContentParameters'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -460,7 +460,7 @@ class ContentApi
     /**
      * Create request for operation 'getCategoryContentParameters'
      *
-     * @param  int $category_id Идентификатор категории на Маркете.  Чтобы узнать идентификатор категории, к которой относится интересующий вас товар, воспользуйтесь запросом [POST /businesses/{businessId}/offer-cards](../../reference/content/getOfferCardsContentStatus.md). (required)
+     * @param  int $category_id Идентификатор категории на Маркете.  Чтобы узнать идентификатор категории, к которой относится интересующий вас товар, воспользуйтесь запросом [POST categories/tree](../../reference/categories/getCategoriesTree.md). (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCategoryContentParameters'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

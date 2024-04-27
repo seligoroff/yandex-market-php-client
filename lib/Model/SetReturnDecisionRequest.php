@@ -323,7 +323,7 @@ class SetReturnDecisionRequest implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets return_item_id
      *
-     * @param int $return_item_id Идентификатор позиции в возврате.
+     * @param int $return_item_id Идентификатор товара в возврате.
      *
      * @return self
      */

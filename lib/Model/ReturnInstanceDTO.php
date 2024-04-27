@@ -378,7 +378,7 @@ class ReturnInstanceDTO implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets cis
      *
-     * @param string|null $cis Контрольный идентификационный знак.
+     * @param string|null $cis Код идентификации единицы товара [в системе «Честный ЗНАК»](https://честныйзнак.рф/).
      *
      * @return self
      */

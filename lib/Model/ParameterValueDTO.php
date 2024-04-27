@@ -35,7 +35,7 @@ use \YandexMarketApi\ObjectSerializer;
  * ParameterValueDTO Class Doc Comment
  *
  * @category Class
- * @description Значение характеристики.
+ * @description Значение характеристики.  Вы можете указывать несколько значений одной характеристики при условии, что:  * Тип характеристики — &#x60;ENUM&#x60;. * В ответе на запрос [POST category/{categoryId}/parameters](../../reference/content/getCategoryContentParameters.md) у данной характеристики поле &#x60;multivalue&#x60; имеет значение &#x60;true&#x60;.  Для этого в &#x60;parameterValues&#x60; передавайте каждое значение отдельно — несколько объектов с параметрами &#x60;parameterId&#x60;, &#x60;valueId&#x60; и &#x60;value&#x60;. Параметр &#x60;parameterId&#x60; должен быть одинаковым.
  * @package  YandexMarketApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -59,6 +59,7 @@ class ParameterValueDTO implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPITypes = [
         'parameter_id' => 'int',
+        'unit_id' => 'int',
         'value_id' => 'int',
         'value' => 'string'
     ];
@@ -72,6 +73,7 @@ class ParameterValueDTO implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPIFormats = [
         'parameter_id' => 'int64',
+        'unit_id' => 'int64',
         'value_id' => 'int64',
         'value' => null
     ];
@@ -83,6 +85,7 @@ class ParameterValueDTO implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static array $openAPINullables = [
         'parameter_id' => false,
+		'unit_id' => false,
 		'value_id' => false,
 		'value' => false
     ];
@@ -174,6 +177,7 @@ class ParameterValueDTO implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $attributeMap = [
         'parameter_id' => 'parameterId',
+        'unit_id' => 'unitId',
         'value_id' => 'valueId',
         'value' => 'value'
     ];
@@ -185,6 +189,7 @@ class ParameterValueDTO implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $setters = [
         'parameter_id' => 'setParameterId',
+        'unit_id' => 'setUnitId',
         'value_id' => 'setValueId',
         'value' => 'setValue'
     ];
@@ -196,6 +201,7 @@ class ParameterValueDTO implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $getters = [
         'parameter_id' => 'getParameterId',
+        'unit_id' => 'getUnitId',
         'value_id' => 'getValueId',
         'value' => 'getValue'
     ];
@@ -258,6 +264,7 @@ class ParameterValueDTO implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function __construct(array $data = null)
     {
         $this->setIfExists('parameter_id', $data ?? [], null);
+        $this->setIfExists('unit_id', $data ?? [], null);
         $this->setIfExists('value_id', $data ?? [], null);
         $this->setIfExists('value', $data ?? [], null);
     }
@@ -333,6 +340,33 @@ class ParameterValueDTO implements ModelInterface, ArrayAccess, \JsonSerializabl
             throw new \InvalidArgumentException('non-nullable parameter_id cannot be null');
         }
         $this->container['parameter_id'] = $parameter_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets unit_id
+     *
+     * @return int|null
+     */
+    public function getUnitId()
+    {
+        return $this->container['unit_id'];
+    }
+
+    /**
+     * Sets unit_id
+     *
+     * @param int|null $unit_id Идентификатор единицы измерения. Если вы не передали параметр `unitId`, используется единица измерения по умолчанию.
+     *
+     * @return self
+     */
+    public function setUnitId($unit_id)
+    {
+        if (is_null($unit_id)) {
+            throw new \InvalidArgumentException('non-nullable unit_id cannot be null');
+        }
+        $this->container['unit_id'] = $unit_id;
 
         return $this;
     }

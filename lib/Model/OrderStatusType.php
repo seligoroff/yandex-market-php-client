@@ -33,7 +33,7 @@ use \YandexMarketApi\ObjectSerializer;
  * OrderStatusType Class Doc Comment
  *
  * @category Class
- * @description Статус заказа:  * &#x60;CANCELLED&#x60; — заказ отменен.  * &#x60;DELIVERED&#x60; — заказ получен покупателем.  * &#x60;DELIVERY&#x60; — заказ передан в службу доставки.  * &#x60;PICKUP&#x60; — заказ доставлен в пункт самовывоза.  * &#x60;PROCESSING&#x60; — заказ находится в обработке.  * &#x60;UNPAID&#x60; — заказ оформлен, но еще не оплачен (если выбрана оплата при оформлении).  Также могут возвращаться другие значения. Обрабатывать их не требуется.
+ * @description Статус заказа:  * &#x60;CANCELLED&#x60; — заказ отменен.  * &#x60;DELIVERED&#x60; — заказ получен покупателем.  * &#x60;DELIVERY&#x60; — заказ передан в службу доставки.  * &#x60;PICKUP&#x60; — заказ доставлен в пункт самовывоза.  * &#x60;PROCESSING&#x60; — заказ находится в обработке.  * &#x60;PENDING&#x60; — заказ ожидает обработки продавцом.  * &#x60;UNPAID&#x60; — заказ оформлен, но еще не оплачен (если выбрана оплата при оформлении).  * &#x60;PLACING&#x60; — заказ оформляется, подготовка к резервированию.  * &#x60;RESERVED&#x60; — заказ pарезервирован, но недооформлен.  * &#x60;PARTIALLY_RETURNED&#x60; — частичный возврат.  * &#x60;RETURNED&#x60; — полный возврат.  * &#x60;UNKNOWN&#x60; — неизвестный статус.  Также могут возвращаться другие значения. Обрабатывать их не требуется.
  * @package  YandexMarketApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -61,13 +61,9 @@ class OrderStatusType
 
     public const PENDING = 'PENDING';
 
-    public const REJECTED = 'REJECTED';
-
     public const PARTIALLY_RETURNED = 'PARTIALLY_RETURNED';
 
     public const RETURNED = 'RETURNED';
-
-    public const CANCELLED_WITHOUT_REFUND = 'CANCELLED_WITHOUT_REFUND';
 
     public const UNKNOWN = 'UNKNOWN';
 
@@ -87,10 +83,8 @@ class OrderStatusType
             self::DELIVERED,
             self::CANCELLED,
             self::PENDING,
-            self::REJECTED,
             self::PARTIALLY_RETURNED,
             self::RETURNED,
-            self::CANCELLED_WITHOUT_REFUND,
             self::UNKNOWN
         ];
     }

@@ -61,7 +61,8 @@ class GetOfferMappingsRequest implements ModelInterface, ArrayAccess, \JsonSeria
         'card_statuses' => '\YandexMarketApi\Model\OfferCardStatusType[]',
         'category_ids' => 'int[]',
         'vendor_names' => 'string[]',
-        'tags' => 'string[]'
+        'tags' => 'string[]',
+        'archived' => 'bool'
     ];
 
     /**
@@ -76,7 +77,8 @@ class GetOfferMappingsRequest implements ModelInterface, ArrayAccess, \JsonSeria
         'card_statuses' => null,
         'category_ids' => null,
         'vendor_names' => null,
-        'tags' => null
+        'tags' => null,
+        'archived' => null
     ];
 
     /**
@@ -89,7 +91,8 @@ class GetOfferMappingsRequest implements ModelInterface, ArrayAccess, \JsonSeria
 		'card_statuses' => false,
 		'category_ids' => false,
 		'vendor_names' => false,
-		'tags' => false
+		'tags' => false,
+		'archived' => false
     ];
 
     /**
@@ -182,7 +185,8 @@ class GetOfferMappingsRequest implements ModelInterface, ArrayAccess, \JsonSeria
         'card_statuses' => 'cardStatuses',
         'category_ids' => 'categoryIds',
         'vendor_names' => 'vendorNames',
-        'tags' => 'tags'
+        'tags' => 'tags',
+        'archived' => 'archived'
     ];
 
     /**
@@ -195,7 +199,8 @@ class GetOfferMappingsRequest implements ModelInterface, ArrayAccess, \JsonSeria
         'card_statuses' => 'setCardStatuses',
         'category_ids' => 'setCategoryIds',
         'vendor_names' => 'setVendorNames',
-        'tags' => 'setTags'
+        'tags' => 'setTags',
+        'archived' => 'setArchived'
     ];
 
     /**
@@ -208,7 +213,8 @@ class GetOfferMappingsRequest implements ModelInterface, ArrayAccess, \JsonSeria
         'card_statuses' => 'getCardStatuses',
         'category_ids' => 'getCategoryIds',
         'vendor_names' => 'getVendorNames',
-        'tags' => 'getTags'
+        'tags' => 'getTags',
+        'archived' => 'getArchived'
     ];
 
     /**
@@ -273,6 +279,7 @@ class GetOfferMappingsRequest implements ModelInterface, ArrayAccess, \JsonSeria
         $this->setIfExists('category_ids', $data ?? [], null);
         $this->setIfExists('vendor_names', $data ?? [], null);
         $this->setIfExists('tags', $data ?? [], null);
+        $this->setIfExists('archived', $data ?? [], null);
     }
 
     /**
@@ -334,7 +341,7 @@ class GetOfferMappingsRequest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets offer_ids
      *
-     * @param string[]|null $offer_ids Идентификаторы товаров, информация о которых нужна.  {% note warning \"Такой список возвращается только целиком\" %}  Если вы запрашиваете информацию по конкретным SKU, не заполняйте: * `page_token`; * `limit`; * `cardStatuses`; * `categoryIds`; * `vendorNames`; * `tags`.  {% endnote %}   
+     * @param string[]|null $offer_ids Идентификаторы товаров, информация о которых нужна.  {% note warning \"Такой список возвращается только целиком\" %}  Если вы запрашиваете информацию по конкретным SKU, не заполняйте: * `page_token`; * `limit`; * `cardStatuses`; * `categoryIds`; * `vendorNames`; * `tags`; * `archived`.  {% endnote %}   
      *
      * @return self
      */
@@ -456,6 +463,33 @@ class GetOfferMappingsRequest implements ModelInterface, ArrayAccess, \JsonSeria
             throw new \InvalidArgumentException('non-nullable tags cannot be null');
         }
         $this->container['tags'] = $tags;
+
+        return $this;
+    }
+
+    /**
+     * Gets archived
+     *
+     * @return bool|null
+     */
+    public function getArchived()
+    {
+        return $this->container['archived'];
+    }
+
+    /**
+     * Sets archived
+     *
+     * @param bool|null $archived Фильтр по нахождению в архиве.  Передайте `true`, чтобы получить товары, находящиеся в архиве. Если фильтр не заполнен или передано `false`, в ответе возвращаются товары, не находящиеся в архиве.
+     *
+     * @return self
+     */
+    public function setArchived($archived)
+    {
+        if (is_null($archived)) {
+            throw new \InvalidArgumentException('non-nullable archived cannot be null');
+        }
+        $this->container['archived'] = $archived;
 
         return $this;
     }

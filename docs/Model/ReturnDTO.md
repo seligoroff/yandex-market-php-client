@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **id** | **int** | Идентификатор возврата. | [optional]
 **order_id** | **int** | Номер заказа. | [optional]
 **creation_date** | **\DateTime** | Дата создания возврата клиентом. | [optional]
-**update_date** | **\DateTime** | Дата обновления заказа. | [optional]
+**update_date** | **\DateTime** | Дата обновления возврата. | [optional]
 **refund_status** | [**\YandexMarketApi\Model\RefundStatusType**](RefundStatusType.md) |  | [optional]
 **logistic_pickup_point** | [**\YandexMarketApi\Model\LogisticPickupPointDTO**](LogisticPickupPointDTO.md) |  | [optional]
 **shipment_recipient_type** | [**\YandexMarketApi\Model\RecipientType**](RecipientType.md) |  | [optional]

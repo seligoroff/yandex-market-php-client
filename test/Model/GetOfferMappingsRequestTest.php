@@ -123,4 +123,13 @@ class GetOfferMappingsRequestTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "archived"
+     */
+    public function testPropertyArchived()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }

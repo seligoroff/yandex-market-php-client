@@ -66,7 +66,7 @@ class GoodsStatsGoodsDTO implements ModelInterface, ArrayAccess, \JsonSerializab
         'category_name' => 'string',
         'weight_dimensions' => '\YandexMarketApi\Model\GoodsStatsWeightDimensionsDTO',
         'warehouses' => '\YandexMarketApi\Model\GoodsStatsWarehouseDTO[]',
-        'tariffs' => '\YandexMarketApi\Model\GoodsStatsTariffDTO[]',
+        'tariffs' => '\YandexMarketApi\Model\TariffDTO[]',
         'pictures' => 'string[]'
     ];
 
@@ -346,8 +346,8 @@ class GoodsStatsGoodsDTO implements ModelInterface, ArrayAccess, \JsonSerializab
             $invalidProperties[] = "invalid value for 'shop_sku', the character length must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['shop_sku']) && !preg_match("/^[\\da-zA-ZА-Яа-я\\.,\/\\\\\\(\\)\\[\\]\\-=_]*$/", $this->container['shop_sku'])) {
-            $invalidProperties[] = "invalid value for 'shop_sku', must be conform to the pattern /^[\\da-zA-ZА-Яа-я\\.,\/\\\\\\(\\)\\[\\]\\-=_]*$/.";
+        if (!is_null($this->container['shop_sku']) && !preg_match("/^[0-9a-zа-яА-ЯA-ZёËëЁ.,\\\\\/()\\[\\]\\-=_]{1,80}$/", $this->container['shop_sku'])) {
+            $invalidProperties[] = "invalid value for 'shop_sku', must be conform to the pattern /^[0-9a-zа-яА-ЯA-ZёËëЁ.,\\\\\/()\\[\\]\\-=_]{1,80}$/.";
         }
 
         return $invalidProperties;
@@ -378,7 +378,7 @@ class GoodsStatsGoodsDTO implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets shop_sku
      *
-     * @param string|null $shop_sku **Ваш SKU**  Идентификатор товара в магазине. Разрешены английские и русские буквы (кроме ё), цифры и символы `. , / \\ ( ) [ ] - = _`  Максимальная длина — 80 знаков.  [Что такое SKU и как его назначать](https://yandex.ru/support/marketplace/assortment/add/index.html#fields).
+     * @param string|null $shop_sku Ваш SKU — идентификатор товара в вашей системе.  Разрешена любая последовательность длиной до 80 знаков. В нее могут входить английские и русские буквы, цифры и символы `. , / \\ ( ) [ ] - = _`  Правила использования SKU:  * У каждого товара SKU должен быть свой.  * SKU товара нельзя менять — можно только удалить товар и добавить заново с новым SKU.  * Уже заданный SKU нельзя освободить и использовать заново для другого товара. Каждый товар должен получать новый идентификатор, до того никогда не использовавшийся в вашем каталоге.  [Что такое SKU и как его назначать](https://yandex.ru/support/marketplace/assortment/add/index.html#fields)
      *
      * @return self
      */
@@ -393,8 +393,8 @@ class GoodsStatsGoodsDTO implements ModelInterface, ArrayAccess, \JsonSerializab
         if ((mb_strlen($shop_sku) < 1)) {
             throw new \InvalidArgumentException('invalid length for $shop_sku when calling GoodsStatsGoodsDTO., must be bigger than or equal to 1.');
         }
-        if ((!preg_match("/^[\\da-zA-ZА-Яа-я\\.,\/\\\\\\(\\)\\[\\]\\-=_]*$/", $shop_sku))) {
-            throw new \InvalidArgumentException("invalid value for \$shop_sku when calling GoodsStatsGoodsDTO., must conform to the pattern /^[\\da-zA-ZА-Яа-я\\.,\/\\\\\\(\\)\\[\\]\\-=_]*$/.");
+        if ((!preg_match("/^[0-9a-zа-яА-ЯA-ZёËëЁ.,\\\\\/()\\[\\]\\-=_]{1,80}$/", $shop_sku))) {
+            throw new \InvalidArgumentException("invalid value for \$shop_sku when calling GoodsStatsGoodsDTO., must conform to the pattern /^[0-9a-zа-яА-ЯA-ZёËëЁ.,\\\\\/()\\[\\]\\-=_]{1,80}$/.");
         }
 
         $this->container['shop_sku'] = $shop_sku;
@@ -594,7 +594,7 @@ class GoodsStatsGoodsDTO implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets tariffs
      *
-     * @return \YandexMarketApi\Model\GoodsStatsTariffDTO[]|null
+     * @return \YandexMarketApi\Model\TariffDTO[]|null
      */
     public function getTariffs()
     {
@@ -604,7 +604,7 @@ class GoodsStatsGoodsDTO implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets tariffs
      *
-     * @param \YandexMarketApi\Model\GoodsStatsTariffDTO[]|null $tariffs Информация о тарифах, по которым нужно заплатить за услуги Маркета.
+     * @param \YandexMarketApi\Model\TariffDTO[]|null $tariffs Информация о тарифах, по которым нужно заплатить за услуги Маркета.  По некоторым услугам могут возвращаться несколько разных стоимостей. Например, в модели FBS стоимость услуги `SORTING` (обработка заказа) зависит от способа отгрузки и количества заказов в отгрузке. Подробнее о тарифах на услуги читайте [в Справке для продавцов](https://yandex.ru/support2/marketplace/ru/introduction/rates/models/).
      *
      * @return self
      */

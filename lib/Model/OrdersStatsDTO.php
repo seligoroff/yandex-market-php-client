@@ -35,7 +35,7 @@ use \YandexMarketApi\ObjectSerializer;
  * OrdersStatsDTO Class Doc Comment
  *
  * @category Class
- * @description Отчет по заказам.
+ * @description Информация по заказам.
  * @package  YandexMarketApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

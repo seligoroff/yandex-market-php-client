@@ -35,7 +35,7 @@ use \YandexMarketApi\ObjectSerializer;
  * RegionDTO Class Doc Comment
  *
  * @category Class
- * @description Информация о регионах.
+ * @description Регион доставки.
  * @package  YandexMarketApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
