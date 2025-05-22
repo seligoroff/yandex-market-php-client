@@ -45,6 +45,8 @@ class OrderItemInstanceType
      */
     public const CIS = 'CIS';
 
+    public const CIS_OPTIONAL = 'CIS_OPTIONAL';
+    
     public const UIN = 'UIN';
 
     public const RNPT = 'RNPT';
@@ -59,6 +61,7 @@ class OrderItemInstanceType
     {
         return [
             self::CIS,
+            self::CIS_OPTIONAL,
             self::UIN,
             self::RNPT,
             self::GTD
