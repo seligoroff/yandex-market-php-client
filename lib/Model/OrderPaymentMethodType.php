@@ -47,6 +47,8 @@ class OrderPaymentMethodType
 
     public const CARD_ON_DELIVERY = 'CARD_ON_DELIVERY';
 
+    public const BNPL_BANK_ON_DELIVERY = 'BNPL_BANK_ON_DELIVERY';
+    
     public const BOUND_CARD_ON_DELIVERY = 'BOUND_CARD_ON_DELIVERY';
     
     public const YANDEX = 'YANDEX';
@@ -80,6 +82,7 @@ class OrderPaymentMethodType
         return [
             self::CASH_ON_DELIVERY,
             self::CARD_ON_DELIVERY,
+            self::BNPL_BANK_ON_DELIVERY,
             self::BOUND_CARD_ON_DELIVERY,
             self::YANDEX,
             self::APPLE_PAY,
