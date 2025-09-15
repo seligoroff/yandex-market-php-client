@@ -267,6 +267,8 @@ class OrderSubstatusType
 
     public const AWAIT_CUSTOM_PRICE_CONFIRMATION = 'AWAIT_CUSTOM_PRICE_CONFIRMATION';
 
+    public const DEFERRED_PAYMENT = 'DEFERRED_PAYMENT';
+
     public const UNKNOWN = 'UNKNOWN';
 
     /**
@@ -388,6 +390,7 @@ class OrderSubstatusType
             self::AWAIT_SERVICEABLE_CONFIRMATION,
             self::POSTPAID_BUDGET_RESERVATION_FAILED,
             self::AWAIT_CUSTOM_PRICE_CONFIRMATION,
+            self::DEFERRED_PAYMENT,
             self::UNKNOWN
         ];
     }
